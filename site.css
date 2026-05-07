@@ -190,6 +190,7 @@ a {
 }
 
 .theater {
+  align-self: start;
   background: var(--white);
   border: 2px solid var(--ink);
   border-radius: 8px;
