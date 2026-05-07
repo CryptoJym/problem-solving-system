@@ -11,8 +11,16 @@ const frameDir = join(tmpDir, "skill-video-frames");
 const width = 1920;
 const height = 1080;
 const transition = 0.55;
-const voice = process.env.SKILL_VOICE || "Samantha";
-const voiceRate = process.env.SKILL_VOICE_RATE || "168";
+const voiceProvider = process.env.VOICE_PROVIDER || process.env.SKILL_VOICE_PROVIDER || "auto";
+const openaiModel = process.env.OPENAI_TTS_MODEL || "gpt-4o-mini-tts";
+const openaiVoice = process.env.OPENAI_TTS_VOICE || "marin";
+const openaiSpeed = Number(process.env.OPENAI_TTS_SPEED || "1");
+const openaiInstructions = process.env.OPENAI_TTS_INSTRUCTIONS ||
+  "Speak with a warm, clear, professional narrator voice. Keep the pace calm, confident, and easy to follow for a general business and engineering audience.";
+const localVoice = process.env.LOCAL_TTS_VOICE || process.env.SKILL_VOICE || "Reed (English (US))";
+const localVoiceRate = process.env.LOCAL_TTS_RATE || process.env.SKILL_VOICE_RATE || "158";
+const voiceoverRuns = [];
+let openAiDisabledForRun = false;
 
 mkdirSync(videoDir, { recursive: true });
 mkdirSync(voiceDir, { recursive: true });
@@ -411,28 +419,85 @@ function renderPoster(skill, introPng) {
   return posterPath;
 }
 
-function renderVoiceover(skill) {
-  const m4aPath = join(voiceDir, `${skill.rank}-${skill.slug}.m4a`);
-  const transcriptPath = join(voiceDir, `${skill.rank}-${skill.slug}.txt`);
-  writeFileSync(transcriptPath, `${skill.title}\n\n${skill.voiceover}\n`);
+function ffmpegToM4a(inputPath, m4aPath, bitrate = "160k") {
+  execFileSync("ffmpeg", [
+    "-v", "error",
+    "-y",
+    "-i", inputPath,
+    "-ac", "1",
+    "-ar", "44100",
+    "-c:a", "aac",
+    "-b:a", bitrate,
+    m4aPath
+  ], { stdio: "inherit" });
+}
 
+async function renderOpenAiVoiceover(skill, m4aPath) {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    throw new Error("OPENAI_API_KEY is not set.");
+  }
+
+  const response = await fetch("https://api.openai.com/v1/audio/speech", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      model: openaiModel,
+      voice: openaiVoice,
+      input: skill.voiceover,
+      instructions: openaiInstructions,
+      response_format: "mp3",
+      speed: Number.isFinite(openaiSpeed) ? openaiSpeed : 1
+    })
+  });
+
+  const body = Buffer.from(await response.arrayBuffer());
+  if (!response.ok) {
+    const message = body.toString("utf8").slice(0, 800);
+    throw new Error(`OpenAI TTS failed for ${skill.rank}: ${response.status} ${response.statusText}. ${message}`);
+  }
+
+  const mp3Path = join(frameDir, `${skill.rank}-${skill.slug}-openai.mp3`);
+  writeFileSync(mp3Path, body);
+  ffmpegToM4a(mp3Path, m4aPath);
+  voiceoverRuns.push(`${skill.rank}: OpenAI ${openaiModel} voice ${openaiVoice}`);
+  return m4aPath;
+}
+
+function renderLocalVoiceover(skill, m4aPath) {
   if (!commandExists("say")) {
     return null;
   }
 
   const aiffPath = join(frameDir, `${skill.rank}-${skill.slug}.aiff`);
-  execFileSync("say", ["-v", voice, "-r", voiceRate, "-o", aiffPath, skill.voiceover], { stdio: "inherit" });
-  execFileSync("ffmpeg", [
-    "-v", "error",
-    "-y",
-    "-i", aiffPath,
-    "-ac", "1",
-    "-ar", "44100",
-    "-c:a", "aac",
-    "-b:a", "128k",
-    m4aPath
-  ], { stdio: "inherit" });
+  execFileSync("say", ["-v", localVoice, "-r", localVoiceRate, "-o", aiffPath, skill.voiceover], { stdio: "inherit" });
+  ffmpegToM4a(aiffPath, m4aPath);
+  voiceoverRuns.push(`${skill.rank}: macOS say voice ${localVoice} at ${localVoiceRate} wpm`);
   return m4aPath;
+}
+
+async function renderVoiceover(skill) {
+  const m4aPath = join(voiceDir, `${skill.rank}-${skill.slug}.m4a`);
+  const transcriptPath = join(voiceDir, `${skill.rank}-${skill.slug}.txt`);
+  writeFileSync(transcriptPath, `${skill.title}\n\n${skill.voiceover}\n`);
+
+  const wantsOpenAi = voiceProvider === "openai" || (voiceProvider === "auto" && !openAiDisabledForRun);
+  if (wantsOpenAi && process.env.OPENAI_API_KEY) {
+    try {
+      return await renderOpenAiVoiceover(skill, m4aPath);
+    } catch (error) {
+      if (voiceProvider === "openai") {
+        throw error;
+      }
+      openAiDisabledForRun = true;
+      console.warn(`OpenAI TTS unavailable for ${skill.rank}; using local fallback. ${error.message}`);
+    }
+  }
+
+  return renderLocalVoiceover(skill, m4aPath);
 }
 
 function mediaDuration(path) {
@@ -487,8 +552,8 @@ function renderSilentVideo(skill, pngs, targetDuration) {
   return silentPath;
 }
 
-function renderVideo(skill) {
-  const audioPath = renderVoiceover(skill);
+async function renderVideo(skill) {
+  const audioPath = await renderVoiceover(skill);
   const audioDuration = mediaDuration(audioPath);
   const targetDuration = Math.max(30, audioDuration + 2.2);
 
@@ -532,11 +597,27 @@ function renderVideo(skill) {
   return outputPath;
 }
 
-const outputs = skills.map(renderVideo);
+const outputs = [];
+for (const skill of skills) {
+  outputs.push(await renderVideo(skill));
+}
+
+const voiceoverSourceSummary = (() => {
+  const uniqueRuns = [...new Set(voiceoverRuns.map((entry) => entry.replace(/^\d\d: /, "")))];
+  if (!uniqueRuns.length) {
+    return "No voiceover provider was available on the last generation run. The generator emitted transcript text and silent MP4s.";
+  }
+  if (uniqueRuns.length === 1) {
+    return `Last generated with ${uniqueRuns[0]}.`;
+  }
+  return `Last generated with mixed narration sources: ${uniqueRuns.join("; ")}.`;
+})();
 
 const transcriptIndex = `# Skill Voiceover Transcripts
 
-Voiceover files are generated with macOS \`say\` when available. If \`say\` is not available, the generator still emits silent MP4s and transcript text.
+${voiceoverSourceSummary}
+
+The generator supports OpenAI Text-to-Speech through \`VOICE_PROVIDER=openai\`, \`OPENAI_TTS_MODEL=${openaiModel}\`, and \`OPENAI_TTS_VOICE=${openaiVoice}\`. In \`VOICE_PROVIDER=auto\`, it tries OpenAI first when \`OPENAI_API_KEY\` is present, then falls back to macOS \`say\` with \`LOCAL_TTS_VOICE="${localVoice}"\` and \`LOCAL_TTS_RATE=${localVoiceRate}\`.
 
 ${skills.map((skill) => `## ${skill.rank}. ${skill.title}
 
@@ -552,7 +633,9 @@ These narrated videos are generated from structured skill data with:
 node tools/generate-skill-videos.mjs
 \`\`\`
 
-Each clip teaches one skill through a paced five-scene sequence: overview, lead flow, business example, coding example, and output. The MP4s include voiceover when macOS \`say\` is available.
+Each clip teaches one skill through a paced five-scene sequence: overview, lead flow, business example, coding example, and output. The MP4s include voiceover from the configured narrator provider when available.
+
+${voiceoverSourceSummary}
 
 For browser-native playback controls, use the GitHub Pages gallery:
 

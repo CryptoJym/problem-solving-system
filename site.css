@@ -394,6 +394,17 @@ video {
   padding-top: 14px;
 }
 
+.theater .voice-note {
+  border-top: 1px solid rgba(15, 20, 38, 0.18);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+  margin-top: 14px;
+  padding-top: 10px;
+}
+
 .btn {
   font-family: var(--mono);
   font-size: 0.78rem;

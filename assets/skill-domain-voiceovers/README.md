@@ -1,6 +1,8 @@
 # Skill Voiceover Transcripts
 
-Voiceover files are generated with macOS `say` when available. If `say` is not available, the generator still emits silent MP4s and transcript text.
+Last generated with macOS say voice Reed (English (US)) at 160 wpm.
+
+The generator supports OpenAI Text-to-Speech through `VOICE_PROVIDER=openai`, `OPENAI_TTS_MODEL=gpt-4o-mini-tts`, and `OPENAI_TTS_VOICE=marin`. In `VOICE_PROVIDER=auto`, it tries OpenAI first when `OPENAI_API_KEY` is present, then falls back to macOS `say` with `LOCAL_TTS_VOICE="Reed (English (US))"` and `LOCAL_TTS_RATE=160`.
 
 ## 01. Problem Framing and Reframing
 

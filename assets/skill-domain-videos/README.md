@@ -6,7 +6,9 @@ These narrated videos are generated from structured skill data with:
 node tools/generate-skill-videos.mjs
 ```
 
-Each clip teaches one skill through a paced five-scene sequence: overview, lead flow, business example, coding example, and output. The MP4s include voiceover when macOS `say` is available.
+Each clip teaches one skill through a paced five-scene sequence: overview, lead flow, business example, coding example, and output. The MP4s include voiceover from the configured narrator provider when available.
+
+Last generated with macOS say voice Reed (English (US)) at 160 wpm.
 
 For browser-native playback controls, use the GitHub Pages gallery:
 

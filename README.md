@@ -72,7 +72,7 @@ Each image shows how the skill works and gives one business scenario plus one co
 
 Each hyper-frame video uses the same four-panel story as the image and highlights the frames in the correct order: `1 -> 2 -> 3 -> 4`.
 
-For the most reliable playback, use the [GitHub Pages lesson theater](https://cryptojym.github.io/problem-solving-system/). The README keeps direct MP4 links below for download and source review. The MP4s are narrated and include AAC audio.
+For the most reliable playback, use the [GitHub Pages lesson theater](https://cryptojym.github.io/problem-solving-system/). The README keeps direct MP4 links below for download and source review. The MP4s are narrated, include AAC audio, and are generated from published transcripts. The media generator supports OpenAI Text-to-Speech; the current checked-in build uses the local `Reed (English (US))` synthetic voice fallback so the media can be regenerated without paid API access.
 
 | Rank | Skill | Hyper-Frame Video |
 | --- | --- | --- |
