@@ -3,19 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Problem Solving System Lessons</title>
+    <title>Problem Solving System &mdash; Nine narrated lessons</title>
     <meta name="description" content="Narrated problem-solving skill videos with business and coding examples.">
+    <meta name="theme-color" content="#0e1426">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="site.css">
   </head>
   <body>
+    <div class="grain" aria-hidden="true"></div>
+
     <main class="site-shell">
       <header class="topbar">
         <a class="brand" href="./" aria-label="Problem Solving System home">
-          <span class="brand-mark">PS</span>
-          <span>
+          <span class="brand-mark" aria-hidden="true">
+            <span>P</span><span>S</span>
+          </span>
+          <span class="brand-text">
             <strong>Problem Solving System</strong>
-            <em>Narrated skill stack</em>
+            <em>A field manual in nine chapters</em>
           </span>
         </a>
         <nav class="navlinks" aria-label="Repository links">
@@ -26,18 +34,27 @@
       </header>
 
       <section class="hero" aria-labelledby="page-title">
-        <div class="hero-copy">
+        <p class="folio" aria-hidden="true"><span>Vol. I</span><span class="folio-rule"></span><span>Ch. 01&ndash;09</span></p>
+
+        <div class="hero-copy reveal">
           <p class="eyebrow">A guided operating system for messy problems</p>
-          <h1 id="page-title">Nine narrated lessons for moving from complaint to proof.</h1>
-          <p class="lede">Use the theater below as the teaching layer: play a lesson, read the transcript, then open the matching skill file when you are ready to apply it.</p>
-          <div class="metrics" aria-label="Media summary">
-            <span><strong>9</strong> skills</span>
-            <span><strong>30s</strong> each</span>
-            <span><strong>2</strong> examples per lesson</span>
-          </div>
+          <h1 id="page-title">
+            <span class="line">Nine</span>
+            <span class="line">narrated</span>
+            <span class="line">lessons for</span>
+            <span class="line">moving from</span>
+            <span class="line"><em class="ital">complaint</em></span>
+            <span class="line">to <em class="ital">proof</em>.</span>
+          </h1>
+          <p class="lede">Use the theater as the teaching layer &mdash; play a lesson, read the transcript, then open the matching skill file when you are ready to apply it.</p>
+          <dl class="metrics" aria-label="Media summary">
+            <div><dt>Skills</dt><dd>09</dd></div>
+            <div><dt>Length</dt><dd>30s</dd></div>
+            <div><dt>Examples</dt><dd>2&times;</dd></div>
+          </dl>
         </div>
 
-        <section class="theater" aria-label="Featured lesson player">
+        <section class="theater reveal" aria-label="Featured lesson player">
           <div class="theater-meta">
             <span id="active-rank" class="rank">01</span>
             <div>
@@ -45,35 +62,43 @@
               <p id="active-use">The problem sounds vague, emotional, or already includes a fix.</p>
             </div>
           </div>
-          <video id="lesson-video" controls preload="metadata" playsinline poster="assets/skill-domain-posters/01-problem-framing-and-reframing.jpg">
-            <source id="lesson-source" src="assets/skill-domain-videos/01-problem-framing-and-reframing.mp4" type="video/mp4">
-          </video>
+          <div class="theater-screen">
+            <video id="lesson-video" controls preload="metadata" playsinline poster="assets/skill-domain-posters/01-problem-framing-and-reframing.jpg">
+              <source id="lesson-source" src="assets/skill-domain-videos/01-problem-framing-and-reframing.mp4" type="video/mp4">
+            </video>
+          </div>
           <div class="theater-actions">
-            <a id="video-link" href="assets/skill-domain-videos/01-problem-framing-and-reframing.mp4">Open MP4</a>
-            <a id="skill-link" href="skills/01-problem-framing-and-reframing/SKILL.md">Open Skill</a>
-            <a id="voice-link" href="assets/skill-domain-voiceovers/01-problem-framing-and-reframing.txt">Transcript File</a>
+            <a id="video-link" class="btn btn-primary" href="assets/skill-domain-videos/01-problem-framing-and-reframing.mp4">Open MP4</a>
+            <a id="skill-link" class="btn" href="skills/01-problem-framing-and-reframing/SKILL.md">Open Skill</a>
+            <a id="voice-link" class="btn" href="assets/skill-domain-voiceovers/01-problem-framing-and-reframing.txt">Transcript</a>
           </div>
         </section>
       </section>
 
       <section class="learning-panel" aria-label="Lesson controls and transcript">
-        <div>
-          <div class="section-kicker">Choose a lesson</div>
-          <div id="playlist" class="playlist"></div>
+        <div class="toc">
+          <div class="section-head">
+            <p class="section-kicker"><span class="sec-mark">&sect;</span> Table of contents</p>
+            <p class="section-rule" aria-hidden="true"></p>
+          </div>
+          <ol id="playlist" class="playlist" role="listbox" aria-label="Choose a lesson"></ol>
         </div>
 
         <article class="notes">
-          <div class="section-kicker">What to listen for</div>
+          <div class="section-head">
+            <p class="section-kicker"><span class="sec-mark">&sect;</span> What to listen for</p>
+            <p class="section-rule" aria-hidden="true"></p>
+          </div>
           <h2 id="notes-title">Problem Framing and Reframing</h2>
-          <p id="notes-promise">Turn the complaint into a testable problem before anyone starts solving.</p>
+          <p id="notes-promise" class="notes-promise">Turn the complaint into a testable problem before anyone starts solving.</p>
           <dl class="examples">
             <div>
               <dt>Business</dt>
-              <dd id="business-example">A sales team says, 'We need more reps.' The reframed problem is a handoff delay after demos.</dd>
+              <dd id="business-example">A sales team says, &lsquo;We need more reps.&rsquo; The reframed problem is a handoff delay after demos.</dd>
             </div>
             <div>
               <dt>Coding</dt>
-              <dd id="coding-example">A team says, 'Rewrite the API.' The reframed problem is one slow endpoint hurting checkout.</dd>
+              <dd id="coding-example">A team says, &lsquo;Rewrite the API.&rsquo; The reframed problem is one slow endpoint hurting checkout.</dd>
             </div>
           </dl>
           <blockquote id="transcript">Skill one is problem framing and reframing. Use it when the complaint is emotional, vague, or already hiding a fix. Do not start with, we need more reps, or rewrite the API. First remove the built in solution. Then name the outcome, map the system, and ask what evidence would prove the real problem. The output is a clearer problem, fewer assumptions, and a next proof step.</blockquote>
@@ -81,25 +106,45 @@
       </section>
 
       <section class="flow-map" aria-labelledby="flow-title">
-        <div>
-          <p class="eyebrow">How to use the set</p>
-          <h2 id="flow-title">Do not watch them as isolated tips. Use them as a sequence.</h2>
+        <div class="flow-head">
+          <p class="eyebrow">Reading order</p>
+          <h2 id="flow-title">Do not watch them as <em class="ital">isolated tips</em>. Use them as a sequence.</h2>
         </div>
-        <ol>
-          <li><strong>Frame</strong><span>Clarify the problem and remove hidden fixes.</span></li>
-          <li><strong>Find</strong><span>Observe the real workflow and locate the right target.</span></li>
-          <li><strong>Prove</strong><span>Map causes and test assumptions with evidence.</span></li>
-          <li><strong>Build</strong><span>Prototype, operate, and capture learning.</span></li>
+        <ol class="flow-list">
+          <li>
+            <span class="flow-num">I</span>
+            <span class="flow-body"><strong>Frame</strong><span>Clarify the problem and remove hidden fixes.</span></span>
+          </li>
+          <li>
+            <span class="flow-num">II</span>
+            <span class="flow-body"><strong>Find</strong><span>Observe the real workflow and locate the right target.</span></span>
+          </li>
+          <li>
+            <span class="flow-num">III</span>
+            <span class="flow-body"><strong>Prove</strong><span>Map causes and test assumptions with evidence.</span></span>
+          </li>
+          <li>
+            <span class="flow-num">IV</span>
+            <span class="flow-body"><strong>Build</strong><span>Prototype, operate, and capture learning.</span></span>
+          </li>
         </ol>
       </section>
 
       <section class="lesson-grid-section" aria-labelledby="grid-title">
         <div class="grid-heading">
-          <p class="eyebrow">Complete library</p>
-          <h2 id="grid-title">Every video has audio, a poster, a transcript, and a source skill.</h2>
+          <div>
+            <p class="eyebrow">Complete library</p>
+            <h2 id="grid-title">Every video has audio, a poster, a transcript, and a source <em class="ital">skill</em>.</h2>
+          </div>
+          <p class="grid-note">Click any chapter to jump straight to its narrated MP4.</p>
         </div>
         <div id="lesson-grid" class="lesson-grid"></div>
       </section>
+
+      <footer class="colophon">
+        <p><span class="sec-mark">&sect;</span> Colophon &mdash; Set in <em>Fraunces</em> and <em>IBM Plex</em>. Nine chapters, recorded, transcribed, and indexed.</p>
+        <p class="folio-end">&mdash; <span>End of volume</span> &mdash;</p>
+      </footer>
     </main>
 
     <noscript>
