@@ -28,6 +28,46 @@ Use this system when a problem is messy, political, expensive to solve, unclear,
 | 8 | [Operating Rhythm Implementation](skills/08-operating-rhythm-implementation/SKILL.md) | Turns a solution into repeated behavior, ownership, cadence, and measurement. | Use when success depends on people doing different work consistently. | Translate the solution into a recurring cadence, assign owners, define visible progress, communicate expectations, train, and review after the first cycle. | Cadence, roles, metric, communication script, review date. |
 | 9 | [Learning Mindset and Retrospective](skills/09-learning-mindset-and-retrospective/SKILL.md) | Converts results, failures, and surprises into reusable learning. | Use after tests, launches, decisions, failures, or unexpected outcomes. | Compare expected vs actual, separate facts from interpretation, identify what was proved or disproved, and update the system. | Learning notes, updated assumptions, reusable rule, next move. |
 
+## Skill Domain Visuals
+
+Each image shows how the skill works and gives one business scenario plus one coding scenario.
+
+### 1. Problem Framing and Reframing
+
+![Problem Framing and Reframing workflow with business and coding examples](assets/skill-domain-images/01-problem-framing-and-reframing.svg)
+
+### 2. Observation and Problem Finding
+
+![Observation and Problem Finding workflow with business and coding examples](assets/skill-domain-images/02-observation-and-problem-finding.svg)
+
+### 3. Root Cause and Constraint Mapping
+
+![Root Cause and Constraint Mapping workflow with business and coding examples](assets/skill-domain-images/03-root-cause-and-constraint-mapping.svg)
+
+### 4. Decision Hygiene and Option Widening
+
+![Decision Hygiene and Option Widening workflow with business and coding examples](assets/skill-domain-images/04-decision-hygiene-and-option-widening.svg)
+
+### 5. Reality Testing and Evidence Seeking
+
+![Reality Testing and Evidence Seeking workflow with business and coding examples](assets/skill-domain-images/05-reality-testing-and-evidence-seeking.svg)
+
+### 6. Structured Ideation and Brainwriting
+
+![Structured Ideation and Brainwriting workflow with business and coding examples](assets/skill-domain-images/06-structured-ideation-and-brainwriting.svg)
+
+### 7. Rapid Prototyping and Experiments
+
+![Rapid Prototyping and Experiments workflow with business and coding examples](assets/skill-domain-images/07-rapid-prototyping-and-experiments.svg)
+
+### 8. Operating Rhythm Implementation
+
+![Operating Rhythm Implementation workflow with business and coding examples](assets/skill-domain-images/08-operating-rhythm-implementation.svg)
+
+### 9. Learning Mindset and Retrospective
+
+![Learning Mindset and Retrospective workflow with business and coding examples](assets/skill-domain-images/09-learning-mindset-and-retrospective.svg)
+
 ## Operating Loop
 
 Use the skills as a loop:
@@ -85,3 +125,4 @@ For an individual problem, use one skill at a time. For a team workshop, assign 
 - [Source review notes](docs/source-review-notes.md)
 - [Reusable skill playbooks](skills/README.md)
 - [Public skill pack design](docs/plans/2026-05-07-public-skill-pack-design.md)
+- [README skill images design](docs/plans/2026-05-07-readme-skill-images-design.md)
