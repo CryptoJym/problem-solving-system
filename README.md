@@ -149,3 +149,4 @@ For an individual problem, use one skill at a time. For a team workshop, assign 
 - [Hyper-frame video design](docs/plans/2026-05-07-hyper-frame-videos-design.md)
 - [GitHub Pages playback design](docs/plans/2026-05-07-github-pages-playback-design.md)
 - [Neural voiceover refresh](docs/plans/2026-05-07-neural-voiceover-refresh.md)
+- [Video visual refinement](docs/plans/2026-05-07-video-visual-refinement.md)

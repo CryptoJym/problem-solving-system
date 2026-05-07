@@ -196,6 +196,81 @@ const skills = [
   }
 ];
 
+const visualDetails = {
+  "problem-framing-and-reframing": {
+    businessBefore: "Complaint: need more reps",
+    businessAfter: "CRM: demos stall after handoff",
+    businessMove: "Reframe the request from hiring to fixing the sales handoff.",
+    codingBefore: "Rewrite the API",
+    codingEvidence: "Trace: one checkout endpoint is slow",
+    codingFix: "Tune the endpoint before touching the whole API."
+  },
+  "observation-and-problem-finding": {
+    businessBefore: "Opinion: agents need training",
+    businessAfter: "Call shadow: billing screen causes rework",
+    businessMove: "Watch the support call and choose the real workflow blocker.",
+    codingBefore: "Login is broken",
+    codingEvidence: "Replay: stale session after password reset",
+    codingFix: "Fix the session edge case, not the whole login flow."
+  },
+  "root-cause-and-constraint-mapping": {
+    businessBefore: "Symptom: orders ship late",
+    businessAfter: "Constraint: approval queue waits two days",
+    businessMove: "Map the cause chain and fix the queue that controls flow.",
+    codingBefore: "Deploys are flaky",
+    codingEvidence: "Failures share one test-data fixture",
+    codingFix: "Isolate test data before rebuilding the pipeline."
+  },
+  "decision-hygiene-and-option-widening": {
+    businessBefore: "Favorite: buy the platform",
+    businessAfter: "Options: patch, pilot, staged rollout",
+    businessMove: "Make the favorite compete against real alternatives.",
+    codingBefore: "Rewrite service",
+    codingEvidence: "Options: tune, split, rollback, rewrite",
+    codingFix: "Set a tripwire before committing to the rewrite."
+  },
+  "reality-testing-and-evidence-seeking": {
+    businessBefore: "Belief: policy will improve attendance",
+    businessAfter: "Evidence: attendance varies by shift",
+    businessMove: "Check the belief against real data before changing policy.",
+    codingBefore: "Add cache",
+    codingEvidence: "Trace: latency comes from external calls",
+    codingFix: "Cache only after traces prove it changes the bottleneck."
+  },
+  "structured-ideation-and-brainwriting": {
+    businessBefore: "Meeting jumps to one onboarding idea",
+    businessAfter: "Silent notes create five stronger themes",
+    businessMove: "Write alone first, then combine ideas into testable concepts.",
+    codingBefore: "CI is slow",
+    codingEvidence: "Ideas: shard, cache, prune, parallelize",
+    codingFix: "Cluster test-speed ideas before changing the pipeline."
+  },
+  "rapid-prototyping-and-experiments": {
+    businessBefore: "Big rollout feels risky",
+    businessAfter: "One-team pilot exposes blockers",
+    businessMove: "Run a small pilot that can answer the riskiest question.",
+    codingBefore: "Build full service",
+    codingEvidence: "Stub test proves the contract is enough",
+    codingFix: "Use the stub result to decide what to build next."
+  },
+  "operating-rhythm-implementation": {
+    businessBefore: "Fix announced once",
+    businessAfter: "Weekly owner review keeps blockers visible",
+    businessMove: "Turn the fix into a named habit, owner, cadence, and score.",
+    codingBefore: "Deploy health checked randomly",
+    codingEvidence: "Daily score catches rollback risk early",
+    codingFix: "Add a visible deploy-health rhythm with one owner."
+  },
+  "learning-mindset-and-retrospective": {
+    businessBefore: "Pilot missed the target",
+    businessAfter: "Retrospective reveals script confusion",
+    businessMove: "Separate the result from the story and update the rule.",
+    codingBefore: "Alert was noisy",
+    codingEvidence: "Incident review shows the threshold was wrong",
+    codingFix: "Turn the incident into a clearer signal and next action."
+  }
+};
+
 function esc(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -292,6 +367,75 @@ function pill(x, y, text, skill, w = 190) {
   <text x="${x + w / 2}" y="${y + 30}" text-anchor="middle" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="900" fill="#ffffff">${esc(text)}</text>`;
 }
 
+function detail(skill) {
+  return visualDetails[skill.slug] ?? {};
+}
+
+function lineText(x, y, text, skill, width = 250) {
+  return `
+  <rect x="${x}" y="${y - 28}" width="${width}" height="42" rx="14" fill="#ffffff" stroke="${skill.accent}" stroke-opacity="0.28" stroke-width="2"/>
+  ${textLines(text, x + 16, y, { maxChars: 25, size: 18, weight: 850, color: "#172033", lineHeight: 20, maxLines: 2 })}`;
+}
+
+function iconForStep(label, x, y, w, h, skill) {
+  const key = label.toLowerCase();
+  const cx = x + w / 2;
+  const cy = y + h / 2;
+  const panel = `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="24" fill="${skill.accent}" opacity="0.10"/>`;
+  const card = (px, py, pw = 86, ph = 58, opacity = 1) =>
+    `<rect x="${px}" y="${py}" width="${pw}" height="${ph}" rx="14" fill="#ffffff" stroke="${skill.accent}" stroke-width="4" opacity="${opacity}"/>`;
+  const person = (px, py, opacity = 1) => `
+    <circle cx="${px}" cy="${py}" r="18" fill="${skill.accent}" opacity="${opacity}"/>
+    <path d="M${px - 30} ${py + 54} C${px - 24} ${py + 28} ${px + 24} ${py + 28} ${px + 30} ${py + 54} Z" fill="${skill.accent}" opacity="${opacity * 0.26}"/>`;
+
+  let art = "";
+  if (key.includes("complaint") || key.includes("watch") || key.includes("write alone")) {
+    art = `
+      ${person(x + 76, y + 96)}
+      ${person(x + w - 76, y + 96, 0.7)}
+      <path d="M${x + 105} ${y + 52} H${x + w - 58} Q${x + w - 34} ${y + 52} ${x + w - 34} ${y + 76} V${y + 110} Q${x + w - 34} ${y + 132} ${x + w - 58} ${y + 132} H${x + 150} L${x + 124} ${y + 156} V${y + 132} H${x + 105} Q${x + 82} ${y + 132} ${x + 82} ${y + 110} V${y + 76} Q${x + 82} ${y + 52} ${x + 105} ${y + 52} Z" fill="#ffffff" stroke="${skill.accent}" stroke-width="4"/>
+      <path d="M${x + 126} ${y + 84} H${x + w - 72} M${x + 126} ${y + 108} H${x + w - 112}" stroke="${skill.accent}" stroke-width="5" stroke-linecap="round" opacity="0.5"/>`;
+  } else if (key.includes("remove") || key.includes("cross") || key.includes("risk")) {
+    art = `
+      ${card(cx - 58, y + 56, 116, 86)}
+      <path d="M${cx - 34} ${y + 82} H${cx + 34} M${cx - 34} ${y + 112} H${cx + 20}" stroke="${skill.accent}" stroke-width="5" stroke-linecap="round" opacity="0.36"/>
+      <path d="M${cx - 48} ${y + 50} L${cx + 48} ${y + 148} M${cx + 48} ${y + 50} L${cx - 48} ${y + 148}" stroke="${skill.accent}" stroke-width="8" stroke-linecap="round"/>`;
+  } else if (key.includes("map") || key.includes("connect") || key.includes("group") || key.includes("build")) {
+    art = `
+      ${card(x + 50, y + 54, 76, 54)}
+      ${card(cx - 38, y + 126, 76, 54, 0.85)}
+      ${card(x + w - 126, y + 54, 76, 54)}
+      <path d="M${x + 126} ${y + 82} L${cx - 40} ${y + 138} M${x + w - 126} ${y + 82} L${cx + 40} ${y + 138}" stroke="${skill.accent}" stroke-width="6" stroke-linecap="round" opacity="0.58"/>`;
+  } else if (key.includes("proof") || key.includes("look") || key.includes("predict") || key.includes("score")) {
+    art = `
+      ${card(cx - 118, y + 48, 236, 120)}
+      <rect x="${cx - 78}" y="${y + 112}" width="28" height="36" rx="8" fill="${skill.accent}" opacity="0.32"/>
+      <rect x="${cx - 22}" y="${y + 88}" width="28" height="60" rx="8" fill="${skill.accent}" opacity="0.58"/>
+      <rect x="${cx + 34}" y="${y + 64}" width="28" height="84" rx="8" fill="${skill.accent}"/>
+      <circle cx="${cx + 118}" cy="${y + 58}" r="24" fill="#ffffff" stroke="${skill.accent}" stroke-width="5"/>
+      <text x="${cx + 118}" y="${y + 68}" text-anchor="middle" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="900" fill="${skill.accent}">?</text>`;
+  } else if (key.includes("option") || key.includes("favorite") || key.includes("stop") || key.includes("next")) {
+    art = `
+      ${card(x + 48, y + 52, 230, 128)}
+      <path d="M${x + 82} ${y + 86} H${x + 244} M${x + 82} ${y + 116} H${x + 220} M${x + 82} ${y + 146} H${x + 252}" stroke="${skill.accent}" stroke-width="5" stroke-linecap="round" opacity="0.36"/>
+      <path d="M${x + 250} ${y + 62} V${y + 116}" stroke="${skill.accent}" stroke-width="6" stroke-linecap="round"/>
+      <path d="M${x + 250} ${y + 62} H${x + 302} L${x + 286} ${y + 84} L${x + 302} ${y + 106} H${x + 250}" fill="${skill.accent}" opacity="0.85"/>`;
+  } else if (key.includes("owner") || key.includes("rhythm") || key.includes("habit")) {
+    art = `
+      ${person(cx - 38, y + 92)}
+      <circle cx="${cx + 62}" cy="${y + 70}" r="36" fill="#ffffff" stroke="${skill.accent}" stroke-width="5"/>
+      <text x="${cx + 62}" y="${y + 82}" text-anchor="middle" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="38" font-weight="900" fill="${skill.accent}">1</text>
+      <path d="M${cx - 86} ${y + 164} H${cx + 116}" stroke="${skill.accent}" stroke-width="8" stroke-linecap="round" opacity="0.20"/>`;
+  } else {
+    art = `
+      ${card(cx - 110, y + 50, 220, 126)}
+      <path d="M${cx - 72} ${y + 92} H${cx + 72} M${cx - 72} ${y + 124} H${cx + 34}" stroke="${skill.accent}" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+      <path d="M${cx - 84} ${y + 156} L${cx - 24} ${y + 96} L${cx + 18} ${y + 132} L${cx + 86} ${y + 66}" stroke="${skill.accent}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`;
+  }
+
+  return `<g>${panel}${art}</g>`;
+}
+
 function flowCard(x, y, w, h, step, label, desc, skill) {
   return `
   <g>
@@ -299,8 +443,8 @@ function flowCard(x, y, w, h, step, label, desc, skill) {
     <rect x="${x + 24}" y="${y + 24}" width="58" height="58" rx="18" fill="${skill.accent}"/>
     <text x="${x + 53}" y="${y + 62}" text-anchor="middle" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="900" fill="#ffffff">${step}</text>
     ${textLines(label, x + 104, y + 62, { maxChars: 18, size: 32, weight: 900, color: "#172033", lineHeight: 34, maxLines: 2 })}
-    <rect x="${x + 24}" y="${y + 118}" width="${w - 48}" height="${h - 150}" rx="22" fill="${skill.accent}" opacity="0.09"/>
-    ${textLines(desc, x + 44, y + 178, { maxChars: 24, size: 27, weight: 650, color: "#263143", lineHeight: 36, maxLines: 4 })}
+    ${iconForStep(label, x + 24, y + 114, w - 48, 198, skill)}
+    ${textLines(desc, x + 34, y + 360, { maxChars: 25, size: 25, weight: 700, color: "#263143", lineHeight: 32, maxLines: 3 })}
   </g>`;
 }
 
@@ -334,47 +478,49 @@ function sceneIntro(skill) {
 function sceneFlow(skill) {
   const xs = [84, 534, 984, 1434];
   const cards = skill.steps.map(([label, desc], index) =>
-    flowCard(xs[index], 286, 360, 476, index + 1, label, desc, skill)
+    flowCard(xs[index], 270, 360, 520, index + 1, label, desc, skill)
   ).join(`
     <path d="M0 0" />
   `);
   const arrows = [444, 894, 1344].map((x) => `
-    <path d="M${x} 524 L${x + 54} 524" stroke="${skill.accent}" stroke-width="7" stroke-linecap="round"/>
-    <path d="M${x + 40} 500 L${x + 66} 524 L${x + 40} 548" fill="none" stroke="${skill.accent}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M${x} 530 L${x + 54} 530" stroke="${skill.accent}" stroke-width="7" stroke-linecap="round"/>
+    <path d="M${x + 40} 506 L${x + 66} 530 L${x + 40} 554" fill="none" stroke="${skill.accent}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
   `).join("");
   return sceneShell(skill, "LEAD FLOW", `
     ${textLines("Lead flow: the four moves", 84, 218, { maxChars: 34, size: 62, weight: 900, color: "#172033", lineHeight: 70 })}
     ${arrows}
     ${cards}
-    <rect x="84" y="852" width="1752" height="98" rx="26" fill="#ffffff" stroke="#172033" stroke-width="2" stroke-opacity="0.10"/>
-    ${textLines(skill.output, 128, 912, { maxChars: 84, size: 32, weight: 760, color: "#172033", lineHeight: 42, maxLines: 2 })}
+    <rect x="84" y="842" width="1752" height="108" rx="26" fill="#ffffff" stroke="#172033" stroke-width="2" stroke-opacity="0.10"/>
+    ${textLines(skill.output, 128, 906, { maxChars: 84, size: 32, weight: 760, color: "#172033", lineHeight: 42, maxLines: 2 })}
   `);
 }
 
 function sceneBusiness(skill) {
+  const info = detail(skill);
   return sceneShell(skill, "BUSINESS EXAMPLE", `
     <text x="84" y="218" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="64" font-weight="900" fill="#172033">Business example</text>
     ${textLines(skill.business, 88, 298, { maxChars: 48, size: 42, weight: 700, color: "#344052", lineHeight: 54, maxLines: 3 })}
-    <rect x="104" y="520" width="530" height="250" rx="34" fill="#ffffff" stroke="#172033" stroke-width="3" stroke-opacity="0.12"/>
-    ${miniPerson(210, 618, skill)}
-    ${miniPerson(292, 618, skill, 0.78)}
-    ${miniPerson(374, 618, skill, 0.56)}
-    <rect x="456" y="584" width="110" height="78" rx="12" fill="#f4f1ea" stroke="${skill.accent}" stroke-width="4"/>
-    <path d="M482 626 L540 626" stroke="${skill.accent}" stroke-width="5" stroke-linecap="round"/>
-    <path d="M482 606 L522 606" stroke="#172033" stroke-width="4" opacity="0.28" stroke-linecap="round"/>
-    <path d="M482 646 L534 646" stroke="#172033" stroke-width="4" opacity="0.28" stroke-linecap="round"/>
-    <path d="M704 646 L826 646" stroke="${skill.accent}" stroke-width="8" stroke-linecap="round"/>
-    <path d="M806 606 L858 646 L806 686" fill="none" stroke="${skill.accent}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="928" y="460" width="824" height="388" rx="34" fill="#ffffff" stroke="#172033" stroke-width="3" stroke-opacity="0.12"/>
-    ${pill(976, 510, "MOVE", skill, 134)}
-    ${textLines("Watch the real handoff. Find the step that actually slows the work.", 976, 610, { maxChars: 44, size: 38, weight: 760, color: "#172033", lineHeight: 50, maxLines: 3 })}
-    <rect x="976" y="744" width="690" height="34" rx="17" fill="${skill.accent}" opacity="0.18"/>
-    <rect x="976" y="744" width="430" height="34" rx="17" fill="${skill.accent}"/>
-    <text x="976" y="824" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" fill="#596274">Proof replaces opinion.</text>
+    <rect x="112" y="466" width="690" height="384" rx="34" fill="#ffffff" stroke="#172033" stroke-width="3" stroke-opacity="0.12"/>
+    <text x="160" y="536" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="900" fill="#172033">Before</text>
+    ${miniPerson(210, 642, skill)}
+    ${miniPerson(292, 642, skill, 0.78)}
+    ${miniPerson(374, 642, skill, 0.56)}
+    ${lineText(442, 638, info.businessBefore ?? "The first story is incomplete", skill, 282)}
+    <rect x="160" y="718" width="530" height="34" rx="17" fill="${skill.accent}" opacity="0.14"/>
+    <rect x="160" y="718" width="260" height="34" rx="17" fill="${skill.accent}" opacity="0.88"/>
+    <text x="160" y="800" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" fill="#596274">The first explanation is not enough.</text>
+    <path d="M840 648 L960 648" stroke="${skill.accent}" stroke-width="9" stroke-linecap="round"/>
+    <path d="M930 604 L988 648 L930 692" fill="none" stroke="${skill.accent}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1036" y="426" width="742" height="468" rx="34" fill="#ffffff" stroke="#172033" stroke-width="3" stroke-opacity="0.12"/>
+    ${pill(1084, 486, "MOVE", skill, 134)}
+    ${textLines(info.businessMove ?? "Use evidence to choose the next concrete move.", 1084, 586, { maxChars: 42, size: 38, weight: 760, color: "#172033", lineHeight: 50, maxLines: 3 })}
+    ${lineText(1084, 770, info.businessAfter ?? "Evidence names the real target.", skill, 560)}
+    <text x="1084" y="842" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" fill="#596274">Context replaces a vague complaint.</text>
   `);
 }
 
 function sceneCoding(skill) {
+  const info = detail(skill);
   return sceneShell(skill, "CODING EXAMPLE", `
     <text x="84" y="218" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="64" font-weight="900" fill="#172033">Coding example</text>
     ${textLines(skill.coding, 88, 298, { maxChars: 48, size: 42, weight: 700, color: "#344052", lineHeight: 54, maxLines: 3 })}
@@ -382,15 +528,15 @@ function sceneCoding(skill) {
     <circle cx="132" cy="492" r="11" fill="#ff6b6b"/>
     <circle cx="168" cy="492" r="11" fill="#ffd166"/>
     <circle cx="204" cy="492" r="11" fill="#06d6a0"/>
-    <text x="132" y="574" font-family="Menlo, Consolas, monospace" font-size="31" font-weight="700" fill="#dce6f7">$ inspect the narrow symptom</text>
-    <text x="132" y="638" font-family="Menlo, Consolas, monospace" font-size="31" font-weight="700" fill="${skill.accent}">trace -> measure -> isolate</text>
-    <text x="132" y="702" font-family="Menlo, Consolas, monospace" font-size="31" font-weight="700" fill="#dce6f7">$ change only what evidence supports</text>
+    ${textLines(`$ problem: ${info.codingBefore ?? "too broad"}`, 132, 570, { maxChars: 40, size: 26, weight: 700, color: "#dce6f7", lineHeight: 34, maxLines: 2, family: "Menlo, Consolas, monospace" })}
+    ${textLines(`$ evidence: ${info.codingEvidence ?? "inspect first"}`, 132, 650, { maxChars: 40, size: 26, weight: 700, color: skill.accent, lineHeight: 34, maxLines: 2, family: "Menlo, Consolas, monospace" })}
+    ${textLines(`$ next: ${info.codingFix ?? "change only what evidence supports"}`, 132, 730, { maxChars: 40, size: 26, weight: 700, color: "#dce6f7", lineHeight: 34, maxLines: 2, family: "Menlo, Consolas, monospace" })}
     <rect x="1004" y="448" width="670" height="100" rx="22" fill="#ffffff" stroke="${skill.accent}" stroke-width="4"/>
     <rect x="1004" y="608" width="670" height="100" rx="22" fill="#ffffff" stroke="${skill.accent}" stroke-width="4" opacity="0.82"/>
     <rect x="1004" y="768" width="670" height="100" rx="22" fill="#ffffff" stroke="${skill.accent}" stroke-width="4" opacity="0.68"/>
-    <text x="1040" y="510" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="900" fill="#172033">Symptom</text>
-    <text x="1040" y="670" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="900" fill="#172033">Evidence</text>
-    <text x="1040" y="830" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="900" fill="#172033">Small fix</text>
+    ${textLines(info.codingBefore ?? "Symptom", 1040, 510, { maxChars: 28, size: 30, weight: 900, color: "#172033", lineHeight: 34, maxLines: 2 })}
+    ${textLines(info.codingEvidence ?? "Evidence", 1040, 670, { maxChars: 28, size: 30, weight: 900, color: "#172033", lineHeight: 34, maxLines: 2 })}
+    ${textLines(info.codingFix ?? "Small fix", 1040, 830, { maxChars: 28, size: 30, weight: 900, color: "#172033", lineHeight: 34, maxLines: 2 })}
     <path d="M1316 554 L1316 596" stroke="${skill.accent}" stroke-width="7" stroke-linecap="round"/>
     <path d="M1296 582 L1316 604 L1336 582" fill="none" stroke="${skill.accent}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M1316 714 L1316 756" stroke="${skill.accent}" stroke-width="7" stroke-linecap="round"/>

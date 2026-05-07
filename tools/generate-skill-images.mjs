@@ -18,8 +18,8 @@ const skills = [
       { label: "Map the flow", scene: "workflow", title: "Work handoff", example: "Leads stall here." },
       { label: "Check proof", scene: "dashboard", title: "Look at data", example: "Where is the stall?" }
     ],
-    business: "Business: the real issue is a sales handoff, not hiring.",
-    coding: "Coding: the real issue is one slow endpoint, not the whole API.",
+    business: "Sales demos stall after handoff; hiring is the hidden fix, not the problem.",
+    coding: "One checkout endpoint is slow; rewriting the whole API is premature.",
     output: "Clear problem, goal, assumptions, next proof."
   },
   {
@@ -35,8 +35,8 @@ const skills = [
       { label: "Sort signals", scene: "sort", title: "Four buckets", example: "Complaint, cause, fix." },
       { label: "Pick problem", scene: "matrix", title: "Best target", example: "Fix duplicate entry." }
     ],
-    business: "Business: watch a support call before blaming training.",
-    coding: "Coding: replay the login flow before guessing the bug.",
+    business: "A support call shows billing-screen rework before anyone blames training.",
+    coding: "A replay shows a stale session edge case before anyone rewrites login.",
     output: "Observed problems, notes, chosen target."
   },
   {
@@ -52,8 +52,8 @@ const skills = [
       { label: "Connect causes", scene: "cause-map", title: "Cause chain", example: "Waiting causes delay." },
       { label: "Find bottleneck", scene: "bottleneck", title: "Slowest point", example: "Approval blocks flow." }
     ],
-    business: "Business: late orders come from approval delay, not packing speed.",
-    coding: "Coding: flaky deploys come from shared test data.",
+    business: "Late orders come from a two-day approval queue, not packing speed.",
+    coding: "Flaky deploys share one test-data fixture, not a broken pipeline.",
     output: "Cause map, bottleneck, next fix."
   },
   {
@@ -69,8 +69,8 @@ const skills = [
       { label: "Add options", scene: "options-board", title: "Three paths", example: "Fix, pilot, stage." },
       { label: "Set stop rule", scene: "metric-flag", title: "Tripwire", example: "Low use means pivot." }
     ],
-    business: "Business: compare three smaller choices before buying software.",
-    coding: "Coding: compare tuning, splitting, and rollback before rewriting.",
+    business: "Compare patching, piloting, and staged rollout before buying the platform.",
+    coding: "Compare tuning, splitting, rollback, and rewrite before touching the service.",
     output: "Options, assumptions, chosen path, stop rules."
   },
   {
@@ -86,8 +86,8 @@ const skills = [
       { label: "Look close", scene: "interview", title: "Ask the worker", example: "What happens here?" },
       { label: "Invite pushback", scene: "debate", title: "Opposite view", example: "How could this fail?" }
     ],
-    business: "Business: check real attendance data before changing policy.",
-    coding: "Coding: inspect traces before adding a cache.",
+    business: "Check shift-level attendance data before changing the policy.",
+    coding: "Inspect traces before assuming a cache is the right fix.",
     output: "Beliefs, evidence, confidence, next recommendation."
   },
   {
@@ -103,8 +103,8 @@ const skills = [
       { label: "Build ideas", scene: "pass-notes", title: "Pass cards", example: "Add one improvement." },
       { label: "Group themes", scene: "cluster-board", title: "Choose tests", example: "Pick best clusters." }
     ],
-    business: "Business: combine onboarding ideas before choosing one.",
-    coding: "Coding: combine test-speed ideas before changing CI.",
+    business: "Silent onboarding ideas become stronger themes before the team chooses one.",
+    coding: "Sharding, caching, pruning, and parallelism are compared before changing CI.",
     output: "Ideas, groups, top concepts, tests."
   },
   {
@@ -120,8 +120,8 @@ const skills = [
       { label: "Predict signal", scene: "chart", title: "Expected result", example: "Blockers appear early." },
       { label: "Decide next", scene: "review-board", title: "Review result", example: "Stop, revise, scale." }
     ],
-    business: "Business: pilot a huddle with one team before rollout.",
-    coding: "Coding: test a stub before building the service.",
+    business: "Pilot one team for a week before rolling the module out everywhere.",
+    coding: "Use a stub to test the contract before building the full service.",
     output: "Prototype, result, lesson, next decision."
   },
   {
@@ -137,8 +137,8 @@ const skills = [
       { label: "Pick owner", scene: "owner", title: "One person owns it", example: "Owner per blocker." },
       { label: "Check score", scene: "metrics", title: "Visible progress", example: "Conversion moves." }
     ],
-    business: "Business: review blockers and owners every week.",
-    coding: "Coding: check deploy health every day.",
+    business: "A weekly owner review keeps blockers visible after launch.",
+    coding: "A daily deploy-health check catches rollback risk early.",
     output: "Rhythm, owner, score, review date."
   },
   {
@@ -154,8 +154,8 @@ const skills = [
       { label: "Update belief", scene: "edit-board", title: "New lesson", example: "Scripts before metrics." },
       { label: "Choose next", scene: "next-flag", title: "Next action", example: "Revise and retest." }
     ],
-    business: "Business: a missed pilot target becomes a better script.",
-    coding: "Coding: a noisy alert becomes a clearer signal.",
+    business: "A missed pilot target becomes a clearer script and next test.",
+    coding: "A noisy alert becomes a better threshold and clearer signal.",
     output: "Lesson, updated belief, next move."
   }
 ];
