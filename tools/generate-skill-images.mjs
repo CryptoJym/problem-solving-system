@@ -148,12 +148,16 @@ function textBlock({ text, x, y, width = 44, size = 22, weight = 400, fill = "#1
   return `<text x="${x}" y="${y}" font-size="${size}" font-weight="${weight}" fill="${fill}" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif">${tspans}</text>`;
 }
 
-function stepBox(label, x, y, accent, index) {
+function stepFrame(label, x, y, accent, index) {
   return `
-    <rect x="${x}" y="${y}" width="225" height="88" rx="14" fill="#ffffff" stroke="${accent}" stroke-opacity="0.28" stroke-width="2"/>
-    <circle cx="${x + 34}" cy="${y + 44}" r="18" fill="${accent}"/>
-    <text x="${x + 34}" y="${y + 51}" text-anchor="middle" font-size="18" font-weight="800" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">${index}</text>
-    ${textBlock({ text: label, x: x + 66, y: y + 38, width: 17, size: 20, weight: 750, fill: "#172033", lineHeight: 1.16 })}
+    <g class="frame-card">
+      <rect class="frame-bg" x="${x}" y="${y}" width="545" height="124" rx="18" fill="#ffffff" stroke="${accent}" stroke-opacity="0.34" stroke-width="2"/>
+      <rect x="${x + 18}" y="${y + 18}" width="96" height="28" rx="14" fill="${accent}" opacity="0.12"/>
+      <text x="${x + 66}" y="${y + 38}" text-anchor="middle" font-size="13" font-weight="900" fill="${accent}" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui">FRAME ${index}</text>
+      <circle cx="${x + 48}" cy="${y + 78}" r="24" fill="${accent}"/>
+      <text x="${x + 48}" y="${y + 87}" text-anchor="middle" font-size="23" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">${index}</text>
+      ${textBlock({ text: label, x: x + 92, y: y + 72, width: 34, size: 26, weight: 850, fill: "#172033", lineHeight: 1.08 })}
+    </g>
   `;
 }
 
@@ -168,39 +172,56 @@ function card({ title, text, x, y, accent, label }) {
 }
 
 function image(skill) {
-  const stepXs = [70, 350, 630, 910];
+  const framePositions = [
+    [70, 272],
+    [665, 272],
+    [70, 428],
+    [665, 428]
+  ];
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="940" viewBox="0 0 1280 940" role="img" aria-labelledby="title desc">
   <title id="title">${esc(skill.rank)} ${esc(skill.title)}</title>
   <desc id="desc">Workflow diagram with business and coding examples for ${esc(skill.title)}.</desc>
-  <rect width="1280" height="760" fill="#f8fafc"/>
-  <rect x="34" y="34" width="1212" height="692" rx="28" fill="#ffffff" stroke="#d9e2ef" stroke-width="2"/>
+  <style>
+    .frame-card .frame-bg { transition: stroke-width 160ms ease, filter 160ms ease, transform 160ms ease; }
+    .frame-card:hover .frame-bg { stroke-width: 4; filter: url(#softShadow); }
+    @media (prefers-reduced-motion: reduce) {
+      .frame-card .frame-bg { transition: none; }
+    }
+  </style>
+  <defs>
+    <filter id="softShadow" x="-8%" y="-18%" width="116%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="940" fill="#f8fafc"/>
+  <rect x="34" y="34" width="1212" height="872" rx="28" fill="#ffffff" stroke="#d9e2ef" stroke-width="2"/>
   <rect x="34" y="34" width="1212" height="164" rx="28" fill="${skill.tint}"/>
   <circle cx="103" cy="112" r="44" fill="${skill.accent}"/>
   <text x="103" y="125" text-anchor="middle" font-size="34" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">${skill.rank}</text>
   <text x="170" y="94" font-size="39" font-weight="900" fill="#111827" font-family="Inter, ui-sans-serif, system-ui">${esc(skill.title)}</text>
   ${textBlock({ text: `Use when: ${skill.useWhen}`, x: 172, y: 135, width: 78, size: 23, weight: 560, fill: "#263244", lineHeight: 1.24 })}
 
-  <text x="70" y="256" font-size="24" font-weight="900" fill="#111827" font-family="Inter, ui-sans-serif, system-ui">How it works</text>
-  ${skill.steps.map((step, index) => stepBox(step, stepXs[index], 286, skill.accent, index + 1)).join("")}
-  <path d="M 302 330 L 336 330" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round"/>
-  <path d="M 330 322 L 342 330 L 330 338" fill="none" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 582 330 L 616 330" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round"/>
-  <path d="M 610 322 L 622 330 L 610 338" fill="none" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 862 330 L 896 330" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round"/>
-  <path d="M 890 322 L 902 330 L 890 338" fill="none" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="70" y="246" font-size="25" font-weight="900" fill="#111827" font-family="Inter, ui-sans-serif, system-ui">How it works: four clean workflow frames</text>
+  <path d="M 604 334 H 650" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round" opacity="0.42"/>
+  <path d="M 646 326 L 658 334 L 646 342" fill="none" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.42"/>
+  <path d="M 938 402 V 416" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round" opacity="0.42"/>
+  <path d="M 930 410 L 938 422 L 946 410" fill="none" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.42"/>
+  <path d="M 650 490 H 604" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round" opacity="0.42"/>
+  <path d="M 610 482 L 598 490 L 610 498" fill="none" stroke="${skill.accent}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.42"/>
+  ${skill.steps.map((step, index) => stepFrame(step, framePositions[index][0], framePositions[index][1], skill.accent, index + 1)).join("")}
 
-  ${card({ title: "Business example", text: skill.business, x: 70, y: 440, accent: skill.accent, label: "scenario" })}
-  ${card({ title: "Coding example", text: skill.coding, x: 665, y: 440, accent: skill.accent, label: "scenario" })}
-  <rect x="70" y="644" width="1140" height="48" rx="14" fill="#f8fafc" stroke="#e5edf6"/>
-  <text x="94" y="675" font-size="19" font-weight="900" fill="${skill.accent}" font-family="Inter, ui-sans-serif, system-ui">Output</text>
-  ${textBlock({ text: skill.output, x: 174, y: 675, width: 92, size: 19, weight: 650, fill: "#263244", lineHeight: 1.18 })}
+  ${card({ title: "Business example", text: skill.business, x: 70, y: 625, accent: skill.accent, label: "scenario" })}
+  ${card({ title: "Coding example", text: skill.coding, x: 665, y: 625, accent: skill.accent, label: "scenario" })}
+  <rect x="70" y="838" width="1140" height="48" rx="14" fill="#f8fafc" stroke="#e5edf6"/>
+  <text x="94" y="869" font-size="19" font-weight="900" fill="${skill.accent}" font-family="Inter, ui-sans-serif, system-ui">Output</text>
+  ${textBlock({ text: skill.output, x: 174, y: 869, width: 92, size: 19, weight: 650, fill: "#263244", lineHeight: 1.18 })}
 </svg>
 `;
 }
 
 for (const skill of skills) {
-  writeFileSync(join(outDir, skill.file), image(skill));
+  writeFileSync(join(outDir, skill.file), image(skill).replace(/[ \t]+$/gm, ""));
 }
 
 console.log(`Generated ${skills.length} SVG images in ${outDir}`);
