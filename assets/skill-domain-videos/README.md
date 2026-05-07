@@ -1,12 +1,16 @@
 # Skill Domain Videos
 
-These videos are generated from the SVG skill-domain images with:
+These narrated videos are generated from structured skill data with:
 
 ```bash
 node tools/generate-skill-videos.mjs
 ```
 
-Each clip highlights the four workflow frames in order: `1 -> 2 -> 3 -> 4`.
+Each clip teaches one skill through a paced five-scene sequence: overview, lead flow, business example, coding example, and output. The MP4s include voiceover when macOS `say` is available.
+
+For browser-native playback controls, use the GitHub Pages gallery:
+
+https://cryptojym.github.io/problem-solving-system/
 
 - [01. Problem Framing and Reframing](01-problem-framing-and-reframing.mp4)
 - [02. Observation and Problem Finding](02-observation-and-problem-finding.mp4)

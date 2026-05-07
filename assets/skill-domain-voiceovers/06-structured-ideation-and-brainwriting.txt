@@ -1,0 +1,3 @@
+Structured Ideation and Brainwriting
+
+Skill six is structured ideation and brainwriting. Use it after the problem is clear, but the solution set is thin. Start with a sharp prompt. Have people write alone first, so status and speed do not decide the answer. Then pass ideas around, combine them, and group themes. In business, this improves onboarding ideas. In code, it surfaces safer ways to speed up tests before changing the pipeline.

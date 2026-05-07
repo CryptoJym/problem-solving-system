@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Problem Solving System Lessons</title>
+    <meta name="description" content="Narrated problem-solving skill videos with business and coding examples.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="site.css">
+  </head>
+  <body>
+    <main class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Problem Solving System home">
+          <span class="brand-mark">PS</span>
+          <span>
+            <strong>Problem Solving System</strong>
+            <em>Narrated skill stack</em>
+          </span>
+        </a>
+        <nav class="navlinks" aria-label="Repository links">
+          <a href="https://github.com/CryptoJym/problem-solving-system">Repository</a>
+          <a href="https://github.com/CryptoJym/problem-solving-system#readme">README</a>
+          <a href="https://github.com/CryptoJym/problem-solving-system/tree/main/assets/skill-domain-videos">Media</a>
+        </nav>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">A guided operating system for messy problems</p>
+          <h1 id="page-title">Nine narrated lessons for moving from complaint to proof.</h1>
+          <p class="lede">Use the theater below as the teaching layer: play a lesson, read the transcript, then open the matching skill file when you are ready to apply it.</p>
+          <div class="metrics" aria-label="Media summary">
+            <span><strong>9</strong> skills</span>
+            <span><strong>30s</strong> each</span>
+            <span><strong>2</strong> examples per lesson</span>
+          </div>
+        </div>
+
+        <section class="theater" aria-label="Featured lesson player">
+          <div class="theater-meta">
+            <span id="active-rank" class="rank">01</span>
+            <div>
+              <h2 id="active-title">Problem Framing and Reframing</h2>
+              <p id="active-use">The problem sounds vague, emotional, or already includes a fix.</p>
+            </div>
+          </div>
+          <video id="lesson-video" controls preload="metadata" playsinline poster="assets/skill-domain-posters/01-problem-framing-and-reframing.jpg">
+            <source id="lesson-source" src="assets/skill-domain-videos/01-problem-framing-and-reframing.mp4" type="video/mp4">
+          </video>
+          <div class="theater-actions">
+            <a id="video-link" href="assets/skill-domain-videos/01-problem-framing-and-reframing.mp4">Open MP4</a>
+            <a id="skill-link" href="skills/01-problem-framing-and-reframing/SKILL.md">Open Skill</a>
+            <a id="voice-link" href="assets/skill-domain-voiceovers/01-problem-framing-and-reframing.txt">Transcript File</a>
+          </div>
+        </section>
+      </section>
+
+      <section class="learning-panel" aria-label="Lesson controls and transcript">
+        <div>
+          <div class="section-kicker">Choose a lesson</div>
+          <div id="playlist" class="playlist"></div>
+        </div>
+
+        <article class="notes">
+          <div class="section-kicker">What to listen for</div>
+          <h2 id="notes-title">Problem Framing and Reframing</h2>
+          <p id="notes-promise">Turn the complaint into a testable problem before anyone starts solving.</p>
+          <dl class="examples">
+            <div>
+              <dt>Business</dt>
+              <dd id="business-example">A sales team says, 'We need more reps.' The reframed problem is a handoff delay after demos.</dd>
+            </div>
+            <div>
+              <dt>Coding</dt>
+              <dd id="coding-example">A team says, 'Rewrite the API.' The reframed problem is one slow endpoint hurting checkout.</dd>
+            </div>
+          </dl>
+          <blockquote id="transcript">Skill one is problem framing and reframing. Use it when the complaint is emotional, vague, or already hiding a fix. Do not start with, we need more reps, or rewrite the API. First remove the built in solution. Then name the outcome, map the system, and ask what evidence would prove the real problem. The output is a clearer problem, fewer assumptions, and a next proof step.</blockquote>
+        </article>
+      </section>
+
+      <section class="flow-map" aria-labelledby="flow-title">
+        <div>
+          <p class="eyebrow">How to use the set</p>
+          <h2 id="flow-title">Do not watch them as isolated tips. Use them as a sequence.</h2>
+        </div>
+        <ol>
+          <li><strong>Frame</strong><span>Clarify the problem and remove hidden fixes.</span></li>
+          <li><strong>Find</strong><span>Observe the real workflow and locate the right target.</span></li>
+          <li><strong>Prove</strong><span>Map causes and test assumptions with evidence.</span></li>
+          <li><strong>Build</strong><span>Prototype, operate, and capture learning.</span></li>
+        </ol>
+      </section>
+
+      <section class="lesson-grid-section" aria-labelledby="grid-title">
+        <div class="grid-heading">
+          <p class="eyebrow">Complete library</p>
+          <h2 id="grid-title">Every video has audio, a poster, a transcript, and a source skill.</h2>
+        </div>
+        <div id="lesson-grid" class="lesson-grid"></div>
+      </section>
+    </main>
+
+    <noscript>
+      <p class="noscript-note">JavaScript is disabled. Open the MP4 files directly from <a href="assets/skill-domain-videos/README.md">the video index</a>.</p>
+    </noscript>
+    <script src="site.js"></script>
+  </body>
+</html>

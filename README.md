@@ -72,6 +72,8 @@ Each image shows how the skill works and gives one business scenario plus one co
 
 Each hyper-frame video uses the same four-panel story as the image and highlights the frames in the correct order: `1 -> 2 -> 3 -> 4`.
 
+For the most reliable playback, use the [GitHub Pages lesson theater](https://cryptojym.github.io/problem-solving-system/). The README keeps direct MP4 links below for download and source review. The MP4s are narrated and include AAC audio.
+
 | Rank | Skill | Hyper-Frame Video |
 | --- | --- | --- |
 | 1 | Problem Framing and Reframing | [Watch MP4](assets/skill-domain-videos/01-problem-framing-and-reframing.mp4) |
@@ -141,6 +143,8 @@ For an individual problem, use one skill at a time. For a team workshop, assign 
 - [Source review notes](docs/source-review-notes.md)
 - [Reusable skill playbooks](skills/README.md)
 - [Generated skill videos](assets/skill-domain-videos/README.md)
+- [Generated voiceover transcripts](assets/skill-domain-voiceovers/README.md)
 - [Public skill pack design](docs/plans/2026-05-07-public-skill-pack-design.md)
 - [README skill images design](docs/plans/2026-05-07-readme-skill-images-design.md)
 - [Hyper-frame video design](docs/plans/2026-05-07-hyper-frame-videos-design.md)
+- [GitHub Pages playback design](docs/plans/2026-05-07-github-pages-playback-design.md)
