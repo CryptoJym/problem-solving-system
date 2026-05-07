@@ -124,10 +124,19 @@ const voiceLink = document.querySelector("#voice-link");
 const playlist = document.querySelector("#playlist");
 const lessonGrid = document.querySelector("#lesson-grid");
 
-function selectLesson(index) {
+function pauseOtherVideos(activeVideo) {
+  document.querySelectorAll("video").forEach((player) => {
+    if (player !== activeVideo) {
+      player.pause();
+    }
+  });
+}
+
+function selectLesson(index, options = {}) {
   const lesson = lessons[index];
   const lessonPaths = paths(lesson);
 
+  pauseOtherVideos(video);
   root.style.setProperty("--active", lesson.accent);
   activeRank.textContent = lesson.rank;
   activeTitle.textContent = lesson.title;
@@ -147,6 +156,11 @@ function selectLesson(index) {
   playlist.querySelectorAll("button").forEach((button, buttonIndex) => {
     button.setAttribute("aria-selected", String(buttonIndex === index));
   });
+
+  if (options.focusTheater) {
+    document.querySelector(".theater").scrollIntoView({ behavior: "smooth", block: "start" });
+    video.focus({ preventScroll: true });
+  }
 }
 
 const total = lessons.length;
@@ -156,6 +170,7 @@ lessons.forEach((lesson, index) => {
   const button = document.createElement("button");
   button.type = "button";
   button.style.setProperty("--accent", lesson.accent);
+  button.setAttribute("role", "option");
   button.setAttribute("aria-selected", index === 0 ? "true" : "false");
   button.innerHTML = `
     <span class="toc-num">${lesson.rank}</span>
@@ -173,8 +188,10 @@ lessons.forEach((lesson, index) => {
   card.style.setProperty("--accent", lesson.accent);
   const lessonPaths = paths(lesson);
   card.innerHTML = `
-    <div class="lesson-card-img">
-      <img src="${lessonPaths.poster}" alt="${lesson.title} video poster" loading="lazy">
+    <div class="lesson-card-media">
+      <video controls preload="metadata" playsinline poster="${lessonPaths.poster}" aria-label="${lesson.title} narrated lesson">
+        <source src="${lessonPaths.video}" type="video/mp4">
+      </video>
     </div>
     <div class="lesson-card-body">
       <div class="lc-head">
@@ -182,8 +199,16 @@ lessons.forEach((lesson, index) => {
         <strong>${lesson.title}</strong>
       </div>
       <p class="lc-use">${lesson.useWhen}</p>
-      <a href="${lessonPaths.video}">Open narrated MP4</a>
+      <div class="lc-actions">
+        <button type="button" aria-label="Load ${lesson.title} in the featured theater">Load in theater</button>
+        <a href="${lessonPaths.video}">Open MP4</a>
+        <a href="${lessonPaths.skill}">Skill file</a>
+      </div>
     </div>
   `;
+  card.querySelector("video").addEventListener("play", (event) => pauseOtherVideos(event.currentTarget));
+  card.querySelector("button").addEventListener("click", () => selectLesson(index, { focusTheater: true }));
   lessonGrid.append(card);
 });
+
+video.addEventListener("play", (event) => pauseOtherVideos(event.currentTarget));

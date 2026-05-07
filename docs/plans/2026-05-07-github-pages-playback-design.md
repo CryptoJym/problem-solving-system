@@ -37,3 +37,7 @@ The Pages site reads the checked-in media directly. The primary player swaps les
 - README links to the GitHub Pages gallery for reliable playback.
 - GitHub Pages is configured to deploy from `main` at `/`.
 - Every MP4 includes an AAC audio stream.
+
+## Continuation Update
+
+The complete library grid now uses one inline native video player per skill instead of static poster cards. Each card also includes actions to load the lesson in the featured theater, open the raw MP4, or open the source skill file. Playback is coordinated in JavaScript so starting one lesson pauses the others.

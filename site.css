@@ -749,16 +749,18 @@ blockquote::first-letter {
   height: 6px;
   background: var(--accent);
 }
-.lesson-card .lesson-card-img {
+.lesson-card .lesson-card-media {
   position: relative;
   border-bottom: 1px solid var(--ink);
+  background: #0a0c14;
 }
-.lesson-card img {
+.lesson-card .lesson-card-media video {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
-  transition: transform .6s var(--ease);
+  border: 0;
+  border-radius: 0;
+  background: #0a0c14;
 }
 .lesson-card .lesson-card-body {
   padding: 16px 16px 18px;
@@ -801,11 +803,21 @@ blockquote::first-letter {
   border-top: 1px dashed var(--rule);
   padding-top: 8px;
 }
+.lc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 6px;
+}
+.lc-actions button,
 .lesson-card-body a {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 6px;
   font-family: var(--mono);
   font-size: 0.74rem;
   font-weight: 500;
@@ -818,9 +830,15 @@ blockquote::first-letter {
   align-self: start;
   transition: color .2s var(--ease), border-color .2s var(--ease);
 }
+.lc-actions button:hover,
 .lesson-card-body a:hover {
   color: var(--accent);
   border-color: var(--accent);
+}
+.lc-actions button:focus-visible,
+.lesson-card-body a:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 3px;
 }
 .lesson-card-body a::after { content: "↗"; }
 
@@ -828,7 +846,6 @@ blockquote::first-letter {
   transform: translate(-3px, -3px);
   box-shadow: 6px 6px 0 var(--ink);
 }
-.lesson-card:hover img { transform: scale(1.03); }
 
 /* ---------- Colophon ---------- */
 
