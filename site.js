@@ -149,23 +149,39 @@ function selectLesson(index) {
   });
 }
 
+const total = lessons.length;
 lessons.forEach((lesson, index) => {
+  // Table-of-contents row
+  const li = document.createElement("li");
   const button = document.createElement("button");
   button.type = "button";
   button.style.setProperty("--accent", lesson.accent);
   button.setAttribute("aria-selected", index === 0 ? "true" : "false");
-  button.innerHTML = `<span>${lesson.rank}</span><span>${lesson.title}</span>`;
+  button.innerHTML = `
+    <span class="toc-num">${lesson.rank}</span>
+    <span class="toc-title">${lesson.title}</span>
+    <span class="toc-leader" aria-hidden="true"></span>
+    <span class="toc-folio">p.&thinsp;${String(index + 1).padStart(2, "0")}</span>
+  `;
   button.addEventListener("click", () => selectLesson(index));
-  playlist.append(button);
+  li.append(button);
+  playlist.append(li);
 
+  // Lesson card (chapter)
   const card = document.createElement("article");
   card.className = "lesson-card";
   card.style.setProperty("--accent", lesson.accent);
   const lessonPaths = paths(lesson);
   card.innerHTML = `
-    <img src="${lessonPaths.poster}" alt="${lesson.title} video poster">
-    <div>
-      <strong>${lesson.rank}. ${lesson.title}</strong>
+    <div class="lesson-card-img">
+      <img src="${lessonPaths.poster}" alt="${lesson.title} video poster" loading="lazy">
+    </div>
+    <div class="lesson-card-body">
+      <div class="lc-head">
+        <span class="lc-rank">${lesson.rank}</span>
+        <strong>${lesson.title}</strong>
+      </div>
+      <p class="lc-use">${lesson.useWhen}</p>
       <a href="${lessonPaths.video}">Open narrated MP4</a>
     </div>
   `;
