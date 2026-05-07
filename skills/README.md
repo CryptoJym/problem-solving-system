@@ -16,3 +16,25 @@ Use these playbooks in order unless the situation clearly calls for a targeted s
 
 If a task is fuzzy, start at skill 1. If a task is already framed and evidence-backed, jump to the lowest-numbered skill that has not been done well yet.
 
+## Standard Skill Output
+
+Every skill should leave behind a short artifact that another person can inspect without attending the meeting:
+
+- the problem or decision being worked
+- the evidence used
+- the options considered
+- the decision or next test
+- the owner and date for the next move
+
+## Facilitator Rule
+
+Do not let a group move forward just because discussion feels productive. Move forward when the required output exists and the evidence check is satisfied.
+
+## Agent Rule
+
+When an AI or operations agent uses these skills, it should state:
+
+- which numbered skill it selected
+- why that skill is the next bottleneck
+- what artifact it produced
+- what remains unproven
