@@ -1,3 +1,3 @@
 Decision Hygiene and Option Widening
 
-Skill four is decision hygiene and option widening. Use it when the room has fallen in love with one answer. Name the risks before you defend the choice. Then run the vanishing option test: if the favorite disappeared, what would we do? Add real alternatives and define tripwires before work starts. This protects business purchases and coding rewrites from becoming expensive commitments with no escape route.
+Use this when the room has fallen in love with one answer. First name what could make the favorite fail. Then pretend that option disappeared and ask what you would do instead. Build at least three real paths, compare the tradeoffs, and set tripwires before work begins. A good decision has an escape route.

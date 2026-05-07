@@ -72,7 +72,7 @@ Each image shows how the skill works and gives one business scenario plus one co
 
 Each hyper-frame video uses the same four-panel story as the image and highlights the frames in the correct order: `1 -> 2 -> 3 -> 4`.
 
-For the most reliable playback, use the [GitHub Pages lesson theater](https://cryptojym.github.io/problem-solving-system/). The README keeps direct MP4 links below for download and source review. The MP4s are narrated, include AAC audio, and are generated from published transcripts. The media generator supports OpenAI Text-to-Speech; the current checked-in build uses the local `Reed (English (US))` synthetic voice fallback so the media can be regenerated without paid API access.
+For the most reliable playback, use the [GitHub Pages lesson theater](https://cryptojym.github.io/problem-solving-system/). The README keeps direct MP4 links below for download and source review. The MP4s are narrated, include AAC audio, and are generated from published transcripts. The current checked-in build uses neural `edge-tts` narration with `en-US-AndrewNeural`; OpenAI Text-to-Speech is also supported when an API key with quota is available, and macOS `say` is only the final fallback.
 
 | Rank | Skill | Hyper-Frame Video |
 | --- | --- | --- |
@@ -148,3 +148,4 @@ For an individual problem, use one skill at a time. For a team workshop, assign 
 - [README skill images design](docs/plans/2026-05-07-readme-skill-images-design.md)
 - [Hyper-frame video design](docs/plans/2026-05-07-hyper-frame-videos-design.md)
 - [GitHub Pages playback design](docs/plans/2026-05-07-github-pages-playback-design.md)
+- [Neural voiceover refresh](docs/plans/2026-05-07-neural-voiceover-refresh.md)

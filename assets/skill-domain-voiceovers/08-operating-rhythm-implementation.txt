@@ -1,3 +1,3 @@
 Operating Rhythm Implementation
 
-Skill eight is operating rhythm implementation. Use it when the fix must become a habit. A solution is not implemented because someone announced it. It is implemented when there is an owner, a cadence, a visible score, and a review date. Business teams may review blockers weekly. Engineering teams may check deploy health daily. The output is a loop that keeps the change alive.
+A solution is not implemented just because someone announced it. It becomes real when people know the habit, the owner, the cadence, the visible score, and the review date. Decide what will happen every day, week, or cycle. Then make the progress visible enough that the system cannot quietly drift back.

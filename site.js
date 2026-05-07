@@ -8,7 +8,7 @@ const lessons = [
     promise: "Turn the complaint into a testable problem before anyone starts solving.",
     business: "A sales team says, 'We need more reps.' The reframed problem is a handoff delay after demos.",
     coding: "A team says, 'Rewrite the API.' The reframed problem is one slow endpoint hurting checkout.",
-    transcript: "Skill one is problem framing and reframing. Use it when the complaint is emotional, vague, or already hiding a fix. Do not start with, we need more reps, or rewrite the API. First remove the built in solution. Then name the outcome, map the system, and ask what evidence would prove the real problem. The output is a clearer problem, fewer assumptions, and a next proof step."
+    transcript: "Start here. When someone says, we need more reps, pause before solving. That sentence already hides a fix. Strip the fix out, name the outcome, and look at the system. Maybe leads are stalling between marketing and sales. The useful question is simple: where does the evidence show the handoff breaking?"
   },
   {
     rank: "02",
@@ -19,7 +19,7 @@ const lessons = [
     promise: "Find the problem worth solving by observing the workflow as it happens.",
     business: "Watch a support call before blaming training. The blocker may be the billing screen.",
     coding: "Replay a login flow before guessing the bug. The problem may be a stale session edge case.",
-    transcript: "Skill two is observation and problem finding. Use it when everyone has an opinion but nobody has watched the work. Sit with the workflow. Notice the workarounds, the repeated questions, and the places where people hesitate. In business, that may reveal a billing screen instead of a training issue. In code, it may reveal a stale session instead of a broken login system. The output is an evidence backed target."
+    transcript: "Before you accept the meeting-room story, watch the work happen. Sit with the support call, the signup flow, or the operator doing the task. Look for pauses, workarounds, repeated questions, and places people quietly recover from bad design. The real problem is often smaller, stranger, and more useful than the first complaint."
   },
   {
     rank: "03",
@@ -30,7 +30,7 @@ const lessons = [
     promise: "Map what causes what, then find the bottleneck you can actually influence.",
     business: "Late orders come from an approval queue, not packing speed.",
     coding: "Flaky deploys come from shared test data, not the whole pipeline.",
-    transcript: "Skill three is root cause and constraint mapping. Use it when the symptoms are obvious but the causes are contested. Start with the system goal, then list the visible bad effects. Connect causes with if then logic and mark the weak links. The goal is not a huge diagram. The goal is to find the bottleneck you can influence. Late orders may be an approval queue. Flaky deploys may be shared test data."
+    transcript: "When symptoms are clear but causes are not, slow down and map the chain. Name the goal. List the visible misses. Then connect causes with plain if-then logic and mark the links you have not proved yet. You are looking for the bottleneck you can influence, not a beautiful diagram. Fix the constraint, not the noise around it."
   },
   {
     rank: "04",
@@ -41,7 +41,7 @@ const lessons = [
     promise: "Protect the decision from narrow framing, bias, and premature commitment.",
     business: "Compare three smaller software choices before buying the platform.",
     coding: "Compare tuning, splitting, and rollback before rewriting the service.",
-    transcript: "Skill four is decision hygiene and option widening. Use it when the room has fallen in love with one answer. Name the risks before you defend the choice. Then run the vanishing option test: if the favorite disappeared, what would we do? Add real alternatives and define tripwires before work starts. This protects business purchases and coding rewrites from becoming expensive commitments with no escape route."
+    transcript: "Use this when the room has fallen in love with one answer. First name what could make the favorite fail. Then pretend that option disappeared and ask what you would do instead. Build at least three real paths, compare the tradeoffs, and set tripwires before work begins. A good decision has an escape route."
   },
   {
     rank: "05",
@@ -52,7 +52,7 @@ const lessons = [
     promise: "Check the claims that must be true before time, money, or trust is spent.",
     business: "Check real attendance data before changing a policy.",
     coding: "Inspect traces before adding a cache.",
-    transcript: "Skill five is reality testing and evidence seeking. Use it when a plan depends on beliefs that have not been checked. List what must be true. Look wide for base rates and comparisons. Look close at logs, interviews, traces, or direct behavior. Then invite pushback. A policy change may need attendance data first. A cache may need trace evidence first. Confidence should move only when the evidence moves."
+    transcript: "Every plan rests on beliefs. Write down what must be true before the plan deserves time, money, or trust. Look wide for base rates and comparisons. Look close at logs, traces, interviews, or direct behavior. Then ask someone to argue against you. Confidence should move only when evidence moves."
   },
   {
     rank: "06",
@@ -63,7 +63,7 @@ const lessons = [
     promise: "Generate options without letting the loudest voice or first idea dominate.",
     business: "Combine onboarding ideas before choosing one.",
     coding: "Combine test-speed ideas before changing CI.",
-    transcript: "Skill six is structured ideation and brainwriting. Use it after the problem is clear, but the solution set is thin. Start with a sharp prompt. Have people write alone first, so status and speed do not decide the answer. Then pass ideas around, combine them, and group themes. In business, this improves onboarding ideas. In code, it surfaces safer ways to speed up tests before changing the pipeline."
+    transcript: "Once the problem is clear, do not let the loudest person choose the first idea. Give the group a sharp prompt. Have everyone write alone first. Then pass ideas around, combine them, and group the strongest themes. This creates more useful options before status, speed, or habit takes over."
   },
   {
     rank: "07",
@@ -74,7 +74,7 @@ const lessons = [
     promise: "Learn from the smallest artifact that can test the riskiest assumption.",
     business: "Pilot a module with one team before rollout.",
     coding: "Test a stub before building the service.",
-    transcript: "Skill seven is rapid prototyping and experiments. Use it when the debate is abstract and a small test could answer the risky question. Pick the assumption most likely to break the plan. Build only enough to test it. Write the expected signal before you run the test. A business module can pilot with one team. A service can start as a stub. The output is learning before full commitment."
+    transcript: "When the debate becomes abstract, make it testable. Pick the assumption most likely to break the plan. Build the smallest artifact that can teach you something: a pilot, a mockup, a stub, or a manual version of the workflow. Write the expected signal before the test. Then let the result change the plan."
   },
   {
     rank: "08",
@@ -85,7 +85,7 @@ const lessons = [
     promise: "Turn a solution into ownership, cadence, visibility, and review.",
     business: "Review blockers and owners every week.",
     coding: "Check deploy health every day.",
-    transcript: "Skill eight is operating rhythm implementation. Use it when the fix must become a habit. A solution is not implemented because someone announced it. It is implemented when there is an owner, a cadence, a visible score, and a review date. Business teams may review blockers weekly. Engineering teams may check deploy health daily. The output is a loop that keeps the change alive."
+    transcript: "A solution is not implemented just because someone announced it. It becomes real when people know the habit, the owner, the cadence, the visible score, and the review date. Decide what will happen every day, week, or cycle. Then make the progress visible enough that the system cannot quietly drift back."
   },
   {
     rank: "09",
@@ -96,7 +96,7 @@ const lessons = [
     promise: "Convert results and surprises into better future behavior.",
     business: "A missed pilot target becomes a better script.",
     coding: "A noisy alert becomes a clearer signal.",
-    transcript: "Skill nine is learning mindset and retrospective. Use it after action, especially when the result surprised you. Compare expected to actual. Separate the facts from the story. Name what the evidence proved or disproved, then update the belief. A missed pilot target can become a better script. A noisy alert can become a clearer signal. The output is a reusable lesson and a next move."
+    transcript: "After action, capture the lesson while the evidence is still fresh. Compare what you expected with what actually happened. Separate facts from the story you want to tell. Name what the result proved, disproved, or left unknown. Then update the rule so the next decision starts smarter than this one did."
   }
 ];
 

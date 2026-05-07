@@ -1,3 +1,3 @@
 Root Cause and Constraint Mapping
 
-Skill three is root cause and constraint mapping. Use it when the symptoms are obvious but the causes are contested. Start with the system goal, then list the visible bad effects. Connect causes with if then logic and mark the weak links. The goal is not a huge diagram. The goal is to find the bottleneck you can influence. Late orders may be an approval queue. Flaky deploys may be shared test data.
+When symptoms are clear but causes are not, slow down and map the chain. Name the goal. List the visible misses. Then connect causes with plain if-then logic and mark the links you have not proved yet. You are looking for the bottleneck you can influence, not a beautiful diagram. Fix the constraint, not the noise around it.

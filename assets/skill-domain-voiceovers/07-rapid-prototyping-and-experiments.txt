@@ -1,3 +1,3 @@
 Rapid Prototyping and Experiments
 
-Skill seven is rapid prototyping and experiments. Use it when the debate is abstract and a small test could answer the risky question. Pick the assumption most likely to break the plan. Build only enough to test it. Write the expected signal before you run the test. A business module can pilot with one team. A service can start as a stub. The output is learning before full commitment.
+When the debate becomes abstract, make it testable. Pick the assumption most likely to break the plan. Build the smallest artifact that can teach you something: a pilot, a mockup, a stub, or a manual version of the workflow. Write the expected signal before the test. Then let the result change the plan.

@@ -17,6 +17,9 @@ const openaiVoice = process.env.OPENAI_TTS_VOICE || "marin";
 const openaiSpeed = Number(process.env.OPENAI_TTS_SPEED || "1");
 const openaiInstructions = process.env.OPENAI_TTS_INSTRUCTIONS ||
   "Speak with a warm, clear, professional narrator voice. Keep the pace calm, confident, and easy to follow for a general business and engineering audience.";
+const edgeVoice = process.env.EDGE_TTS_VOICE || "en-US-AndrewNeural";
+const edgeRate = process.env.EDGE_TTS_RATE || "-4%";
+const edgePitch = process.env.EDGE_TTS_PITCH || "+0Hz";
 const localVoice = process.env.LOCAL_TTS_VOICE || process.env.SKILL_VOICE || "Reed (English (US))";
 const localVoiceRate = process.env.LOCAL_TTS_RATE || process.env.SKILL_VOICE_RATE || "158";
 const voiceoverRuns = [];
@@ -45,7 +48,7 @@ const skills = [
     business: "A sales team says, 'We need more reps.' The reframed problem is a handoff delay after demos.",
     coding: "A team says, 'Rewrite the API.' The reframed problem is one slow endpoint hurting checkout.",
     output: "Clear problem frame, goal, assumptions removed, and the next proof to gather.",
-    voiceover: "Skill one is problem framing and reframing. Use it when the complaint is emotional, vague, or already hiding a fix. Do not start with, we need more reps, or rewrite the API. First remove the built in solution. Then name the outcome, map the system, and ask what evidence would prove the real problem. The output is a clearer problem, fewer assumptions, and a next proof step."
+    voiceover: "Start here. When someone says, we need more reps, pause before solving. That sentence already hides a fix. Strip the fix out, name the outcome, and look at the system. Maybe leads are stalling between marketing and sales. The useful question is simple: where does the evidence show the handoff breaking?"
   },
   {
     rank: "02",
@@ -63,7 +66,7 @@ const skills = [
     business: "Watch a support call before blaming training. The blocker may be the billing screen.",
     coding: "Replay a login flow before guessing the bug. The problem may be a stale session edge case.",
     output: "Observed problems, notes, evidence strength, and a chosen target.",
-    voiceover: "Skill two is observation and problem finding. Use it when everyone has an opinion but nobody has watched the work. Sit with the workflow. Notice the workarounds, the repeated questions, and the places where people hesitate. In business, that may reveal a billing screen instead of a training issue. In code, it may reveal a stale session instead of a broken login system. The output is an evidence backed target."
+    voiceover: "Before you accept the meeting-room story, watch the work happen. Sit with the support call, the signup flow, or the operator doing the task. Look for pauses, workarounds, repeated questions, and places people quietly recover from bad design. The real problem is often smaller, stranger, and more useful than the first complaint."
   },
   {
     rank: "03",
@@ -81,7 +84,7 @@ const skills = [
     business: "Late orders come from an approval queue, not packing speed.",
     coding: "Flaky deploys come from shared test data, not the whole pipeline.",
     output: "Cause map, bottleneck, weak links, and next fix candidate.",
-    voiceover: "Skill three is root cause and constraint mapping. Use it when the symptoms are obvious but the causes are contested. Start with the system goal, then list the visible bad effects. Connect causes with if then logic and mark the weak links. The goal is not a huge diagram. The goal is to find the bottleneck you can influence. Late orders may be an approval queue. Flaky deploys may be shared test data."
+    voiceover: "When symptoms are clear but causes are not, slow down and map the chain. Name the goal. List the visible misses. Then connect causes with plain if-then logic and mark the links you have not proved yet. You are looking for the bottleneck you can influence, not a beautiful diagram. Fix the constraint, not the noise around it."
   },
   {
     rank: "04",
@@ -99,7 +102,7 @@ const skills = [
     business: "Compare three smaller software choices before buying the platform.",
     coding: "Compare tuning, splitting, and rollback before rewriting the service.",
     output: "Options, assumptions, selected path, and pivot rules.",
-    voiceover: "Skill four is decision hygiene and option widening. Use it when the room has fallen in love with one answer. Name the risks before you defend the choice. Then run the vanishing option test: if the favorite disappeared, what would we do? Add real alternatives and define tripwires before work starts. This protects business purchases and coding rewrites from becoming expensive commitments with no escape route."
+    voiceover: "Use this when the room has fallen in love with one answer. First name what could make the favorite fail. Then pretend that option disappeared and ask what you would do instead. Build at least three real paths, compare the tradeoffs, and set tripwires before work begins. A good decision has an escape route."
   },
   {
     rank: "05",
@@ -117,7 +120,7 @@ const skills = [
     business: "Check real attendance data before changing a policy.",
     coding: "Inspect traces before adding a cache.",
     output: "Beliefs, evidence, confidence level, and revised recommendation.",
-    voiceover: "Skill five is reality testing and evidence seeking. Use it when a plan depends on beliefs that have not been checked. List what must be true. Look wide for base rates and comparisons. Look close at logs, interviews, traces, or direct behavior. Then invite pushback. A policy change may need attendance data first. A cache may need trace evidence first. Confidence should move only when the evidence moves."
+    voiceover: "Every plan rests on beliefs. Write down what must be true before the plan deserves time, money, or trust. Look wide for base rates and comparisons. Look close at logs, traces, interviews, or direct behavior. Then ask someone to argue against you. Confidence should move only when evidence moves."
   },
   {
     rank: "06",
@@ -135,7 +138,7 @@ const skills = [
     business: "Combine onboarding ideas before choosing one.",
     coding: "Combine test-speed ideas before changing CI.",
     output: "Idea inventory, clusters, top concepts, and testing candidates.",
-    voiceover: "Skill six is structured ideation and brainwriting. Use it after the problem is clear, but the solution set is thin. Start with a sharp prompt. Have people write alone first, so status and speed do not decide the answer. Then pass ideas around, combine them, and group themes. In business, this improves onboarding ideas. In code, it surfaces safer ways to speed up tests before changing the pipeline."
+    voiceover: "Once the problem is clear, do not let the loudest person choose the first idea. Give the group a sharp prompt. Have everyone write alone first. Then pass ideas around, combine them, and group the strongest themes. This creates more useful options before status, speed, or habit takes over."
   },
   {
     rank: "07",
@@ -153,7 +156,7 @@ const skills = [
     business: "Pilot a module with one team before rollout.",
     coding: "Test a stub before building the service.",
     output: "Prototype, result, lesson, and next decision.",
-    voiceover: "Skill seven is rapid prototyping and experiments. Use it when the debate is abstract and a small test could answer the risky question. Pick the assumption most likely to break the plan. Build only enough to test it. Write the expected signal before you run the test. A business module can pilot with one team. A service can start as a stub. The output is learning before full commitment."
+    voiceover: "When the debate becomes abstract, make it testable. Pick the assumption most likely to break the plan. Build the smallest artifact that can teach you something: a pilot, a mockup, a stub, or a manual version of the workflow. Write the expected signal before the test. Then let the result change the plan."
   },
   {
     rank: "08",
@@ -171,7 +174,7 @@ const skills = [
     business: "Review blockers and owners every week.",
     coding: "Check deploy health every day.",
     output: "Rhythm, owner, score, review date, and communication script.",
-    voiceover: "Skill eight is operating rhythm implementation. Use it when the fix must become a habit. A solution is not implemented because someone announced it. It is implemented when there is an owner, a cadence, a visible score, and a review date. Business teams may review blockers weekly. Engineering teams may check deploy health daily. The output is a loop that keeps the change alive."
+    voiceover: "A solution is not implemented just because someone announced it. It becomes real when people know the habit, the owner, the cadence, the visible score, and the review date. Decide what will happen every day, week, or cycle. Then make the progress visible enough that the system cannot quietly drift back."
   },
   {
     rank: "09",
@@ -189,7 +192,7 @@ const skills = [
     business: "A missed pilot target becomes a better script.",
     coding: "A noisy alert becomes a clearer signal.",
     output: "Lesson, updated belief, reusable rule, and next move.",
-    voiceover: "Skill nine is learning mindset and retrospective. Use it after action, especially when the result surprised you. Compare expected to actual. Separate the facts from the story. Name what the evidence proved or disproved, then update the belief. A missed pilot target can become a better script. A noisy alert can become a clearer signal. The output is a reusable lesson and a next move."
+    voiceover: "After action, capture the lesson while the evidence is still fresh. Compare what you expected with what actually happened. Separate facts from the story you want to tell. Name what the result proved, disproved, or left unknown. Then update the rule so the next decision starts smarter than this one did."
   }
 ];
 
@@ -204,6 +207,15 @@ function esc(value) {
 function commandExists(command) {
   try {
     execFileSync("which", [command], { stdio: "ignore" });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function edgeTtsAvailable() {
+  try {
+    execFileSync("python3", ["-m", "edge_tts", "--version"], { stdio: "ignore" });
     return true;
   } catch {
     return false;
@@ -479,6 +491,25 @@ function renderLocalVoiceover(skill, m4aPath) {
   return m4aPath;
 }
 
+function renderEdgeVoiceover(skill, m4aPath) {
+  if (!edgeTtsAvailable()) {
+    return null;
+  }
+
+  const mp3Path = join(frameDir, `${skill.rank}-${skill.slug}-edge.mp3`);
+  execFileSync("python3", [
+    "-m", "edge_tts",
+    "--voice", edgeVoice,
+    `--rate=${edgeRate}`,
+    `--pitch=${edgePitch}`,
+    "--text", skill.voiceover,
+    "--write-media", mp3Path
+  ], { stdio: "inherit" });
+  ffmpegToM4a(mp3Path, m4aPath);
+  voiceoverRuns.push(`${skill.rank}: edge-tts voice ${edgeVoice} at rate ${edgeRate}`);
+  return m4aPath;
+}
+
 async function renderVoiceover(skill) {
   const m4aPath = join(voiceDir, `${skill.rank}-${skill.slug}.m4a`);
   const transcriptPath = join(voiceDir, `${skill.rank}-${skill.slug}.txt`);
@@ -493,7 +524,17 @@ async function renderVoiceover(skill) {
         throw error;
       }
       openAiDisabledForRun = true;
-      console.warn(`OpenAI TTS unavailable for ${skill.rank}; using local fallback. ${error.message}`);
+      console.warn(`OpenAI TTS unavailable for ${skill.rank}; trying the next narrator provider. ${error.message}`);
+    }
+  }
+
+  if (voiceProvider === "edge" || voiceProvider === "auto") {
+    const edgePath = renderEdgeVoiceover(skill, m4aPath);
+    if (edgePath) {
+      return edgePath;
+    }
+    if (voiceProvider === "edge") {
+      throw new Error("VOICE_PROVIDER=edge requires the Python edge-tts package.");
     }
   }
 
@@ -555,7 +596,7 @@ function renderSilentVideo(skill, pngs, targetDuration) {
 async function renderVideo(skill) {
   const audioPath = await renderVoiceover(skill);
   const audioDuration = mediaDuration(audioPath);
-  const targetDuration = Math.max(30, audioDuration + 2.2);
+  const targetDuration = Math.max(24, audioDuration + 2.6);
 
   const scenes = [
     ["01-intro", sceneIntro(skill)],
@@ -617,7 +658,14 @@ const transcriptIndex = `# Skill Voiceover Transcripts
 
 ${voiceoverSourceSummary}
 
-The generator supports OpenAI Text-to-Speech through \`VOICE_PROVIDER=openai\`, \`OPENAI_TTS_MODEL=${openaiModel}\`, and \`OPENAI_TTS_VOICE=${openaiVoice}\`. In \`VOICE_PROVIDER=auto\`, it tries OpenAI first when \`OPENAI_API_KEY\` is present, then falls back to macOS \`say\` with \`LOCAL_TTS_VOICE="${localVoice}"\` and \`LOCAL_TTS_RATE=${localVoiceRate}\`.
+The generator supports OpenAI Text-to-Speech through \`VOICE_PROVIDER=openai\`, \`OPENAI_TTS_MODEL=${openaiModel}\`, and \`OPENAI_TTS_VOICE=${openaiVoice}\`. It also supports neural Edge TTS through \`VOICE_PROVIDER=edge\`, \`EDGE_TTS_VOICE=${edgeVoice}\`, and \`EDGE_TTS_RATE=${edgeRate}\`. In \`VOICE_PROVIDER=auto\`, it tries OpenAI first when \`OPENAI_API_KEY\` is present, then Edge TTS when available, then macOS \`say\` with \`LOCAL_TTS_VOICE="${localVoice}"\` and \`LOCAL_TTS_RATE=${localVoiceRate}\`.
+
+To regenerate the checked-in neural narration path:
+
+\`\`\`bash
+python3 -m pip install --user edge-tts
+VOICE_PROVIDER=edge EDGE_TTS_VOICE=${edgeVoice} EDGE_TTS_RATE=${edgeRate} node tools/generate-skill-videos.mjs
+\`\`\`
 
 ${skills.map((skill) => `## ${skill.rank}. ${skill.title}
 
@@ -631,6 +679,13 @@ These narrated videos are generated from structured skill data with:
 
 \`\`\`bash
 node tools/generate-skill-videos.mjs
+\`\`\`
+
+The checked-in neural narration path can be regenerated with:
+
+\`\`\`bash
+python3 -m pip install --user edge-tts
+VOICE_PROVIDER=edge EDGE_TTS_VOICE=${edgeVoice} EDGE_TTS_RATE=${edgeRate} node tools/generate-skill-videos.mjs
 \`\`\`
 
 Each clip teaches one skill through a paced five-scene sequence: overview, lead flow, business example, coding example, and output. The MP4s include voiceover from the configured narrator provider when available.

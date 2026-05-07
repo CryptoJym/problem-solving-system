@@ -6,9 +6,16 @@ These narrated videos are generated from structured skill data with:
 node tools/generate-skill-videos.mjs
 ```
 
+The checked-in neural narration path can be regenerated with:
+
+```bash
+python3 -m pip install --user edge-tts
+VOICE_PROVIDER=edge EDGE_TTS_VOICE=en-US-AndrewNeural EDGE_TTS_RATE=-4% node tools/generate-skill-videos.mjs
+```
+
 Each clip teaches one skill through a paced five-scene sequence: overview, lead flow, business example, coding example, and output. The MP4s include voiceover from the configured narrator provider when available.
 
-Last generated with macOS say voice Reed (English (US)) at 160 wpm.
+Last generated with edge-tts voice en-US-AndrewNeural at rate -4%.
 
 For browser-native playback controls, use the GitHub Pages gallery:
 

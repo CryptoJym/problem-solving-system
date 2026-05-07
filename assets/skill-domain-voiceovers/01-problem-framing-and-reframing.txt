@@ -1,3 +1,3 @@
 Problem Framing and Reframing
 
-Skill one is problem framing and reframing. Use it when the complaint is emotional, vague, or already hiding a fix. Do not start with, we need more reps, or rewrite the API. First remove the built in solution. Then name the outcome, map the system, and ask what evidence would prove the real problem. The output is a clearer problem, fewer assumptions, and a next proof step.
+Start here. When someone says, we need more reps, pause before solving. That sentence already hides a fix. Strip the fix out, name the outcome, and look at the system. Maybe leads are stalling between marketing and sales. The useful question is simple: where does the evidence show the handoff breaking?

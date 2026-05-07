@@ -1,3 +1,3 @@
 Observation and Problem Finding
 
-Skill two is observation and problem finding. Use it when everyone has an opinion but nobody has watched the work. Sit with the workflow. Notice the workarounds, the repeated questions, and the places where people hesitate. In business, that may reveal a billing screen instead of a training issue. In code, it may reveal a stale session instead of a broken login system. The output is an evidence backed target.
+Before you accept the meeting-room story, watch the work happen. Sit with the support call, the signup flow, or the operator doing the task. Look for pauses, workarounds, repeated questions, and places people quietly recover from bad design. The real problem is often smaller, stranger, and more useful than the first complaint.
