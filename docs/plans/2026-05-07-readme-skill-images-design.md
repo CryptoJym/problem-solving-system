@@ -21,6 +21,8 @@ This approach keeps the README durable on GitHub without relying on external ima
 
 The workflow section uses a left-to-right `1 -> 2 -> 3 -> 4` sequence so the arrows match the conceptual order. Each step is a large framed card with the step label at the top, a concrete mini-scene in the middle, and a plain-language example caption at the bottom. The scenes use people, meetings, whiteboards, dashboards, sticky notes, process maps, review boards, and visible artifacts rather than abstract symbols.
 
+The card copy is intentionally short. Labels should be simple verb phrases such as "Hear complaint," "Cross out fix," "Map the flow," and "Check proof." Captions should explain the scene in one short sentence or phrase. The image should not require the reader to already know terms such as root cause, UDE, DRI, base rate, or tripwire before the visual makes sense.
+
 For example, the first skill now uses a sales pipeline story: a VP says "We need more reps," the hidden "hire reps" solution is crossed out, the team reframes around a marketing-to-sales handoff, and the final card asks where the CRM data shows leads stalling. This makes the card understandable even before someone reads the detailed playbook.
 
 Each frame card also includes lightweight hover emphasis for SVG viewers that support it, while the static layout remains complete when hover or motion is unavailable.
@@ -33,4 +35,5 @@ Each frame card also includes lightweight hover emphasis for SVG viewers that su
 - Each workflow frame includes its own concrete mini-scene and example caption.
 - The images illustrate how the skill works, not just decorate the page.
 - Flow arrows read left-to-right as `1 -> 2 -> 3 -> 4`.
+- Step labels and captions use short general-audience language.
 - Generated assets and README changes pass syntax and redaction checks.

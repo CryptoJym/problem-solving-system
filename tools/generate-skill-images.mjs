@@ -11,16 +11,16 @@ const skills = [
     file: "01-problem-framing-and-reframing.svg",
     accent: "#2563eb",
     tint: "#dbeafe",
-    useWhen: "The problem statement is vague, political, solution-shaped, or stuck on symptoms.",
+    useWhen: "The problem sounds vague, emotional, or already includes a fix.",
     steps: [
-      { label: "Current complaint", scene: "meeting", title: "Sales meeting", example: "VP says: We need more reps." },
-      { label: "Remove hidden fix", scene: "board-x", title: "Hidden fix crossed out", example: "Hire more reps is a solution, not the problem." },
-      { label: "Reframe goal/system", scene: "workflow", title: "Lead handoff map", example: "Leads stall between marketing and sales." },
-      { label: "Ask evidence question", scene: "dashboard", title: "CRM evidence check", example: "Where exactly do qualified leads stall?" }
+      { label: "Hear complaint", scene: "meeting", title: "Team meeting", example: "We need more people." },
+      { label: "Cross out fix", scene: "board-x", title: "First fix removed", example: "Hiring is not the problem." },
+      { label: "Map the flow", scene: "workflow", title: "Work handoff", example: "Leads stall here." },
+      { label: "Check proof", scene: "dashboard", title: "Look at data", example: "Where is the stall?" }
     ],
-    business: "Sales says: hire more reps. Reframe: qualified leads stall because handoffs between marketing and sales are unclear.",
-    coding: "Team says: rewrite the API. Reframe: one endpoint slows only when cache misses force repeated database reads.",
-    output: "Testable frame, explicit goal, removed assumptions, next evidence needed."
+    business: "Business: the real issue is a sales handoff, not hiring.",
+    coding: "Coding: the real issue is one slow endpoint, not the whole API.",
+    output: "Clear problem, goal, assumptions, next proof."
   },
   {
     rank: "02",
@@ -28,16 +28,16 @@ const skills = [
     file: "02-observation-and-problem-finding.svg",
     accent: "#0891b2",
     tint: "#cffafe",
-    useWhen: "There are many possible problems and the team is relying on secondhand reports.",
+    useWhen: "People are guessing instead of watching real work.",
     steps: [
-      { label: "Watch real work", scene: "desk", title: "Watch the billing call", example: "Agent enters the same customer data twice." },
-      { label: "Record surprises", scene: "notes", title: "Surprise note", example: "Duplicate entry creates avoidable mistakes." },
-      { label: "Separate symptoms", scene: "sort", title: "Sort the notes", example: "Complaint, symptom, cause, and fix go in separate columns." },
-      { label: "Pick high-value problem", scene: "matrix", title: "Priority choice", example: "Fix duplicate billing entry first." }
+      { label: "Watch work", scene: "desk", title: "Real workflow", example: "Same data typed twice." },
+      { label: "Note surprises", scene: "notes", title: "Surprise note", example: "Mistakes start here." },
+      { label: "Sort signals", scene: "sort", title: "Four buckets", example: "Complaint, cause, fix." },
+      { label: "Pick problem", scene: "matrix", title: "Best target", example: "Fix duplicate entry." }
     ],
-    business: "Support tickets blame training. Call shadowing shows the billing screen forces duplicate entry and creates mistakes.",
-    coding: "Users report login bugs. Session replay shows the real issue is an OAuth redirect loop after expired sessions.",
-    output: "Candidate problems, observed symptoms, selection rationale, open questions."
+    business: "Business: watch a support call before blaming training.",
+    coding: "Coding: replay the login flow before guessing the bug.",
+    output: "Observed problems, notes, chosen target."
   },
   {
     rank: "03",
@@ -45,16 +45,16 @@ const skills = [
     file: "03-root-cause-and-constraint-mapping.svg",
     accent: "#7c3aed",
     tint: "#ede9fe",
-    useWhen: "Symptoms are known but the causal story is contested or incomplete.",
+    useWhen: "Symptoms are clear but causes are not.",
     steps: [
-      { label: "Name system goal", scene: "target-board", title: "Goal board", example: "Ship orders on time." },
-      { label: "List UDEs", scene: "list-board", title: "Undesirable effects", example: "Late orders, rework, refunds." },
-      { label: "Map if-then causes", scene: "cause-map", title: "Cause chain", example: "If approval waits, shipping starts late." },
-      { label: "Find constraint", scene: "bottleneck", title: "Bottleneck found", example: "One approval batch controls the whole flow." }
+      { label: "Name goal", scene: "target-board", title: "Clear goal", example: "Ship on time." },
+      { label: "List bad effects", scene: "list-board", title: "What goes wrong", example: "Late, rework, refunds." },
+      { label: "Connect causes", scene: "cause-map", title: "Cause chain", example: "Waiting causes delay." },
+      { label: "Find bottleneck", scene: "bottleneck", title: "Slowest point", example: "Approval blocks flow." }
     ],
-    business: "Orders ship late. Mapping shows the real constraint is a once-daily approval batch, not warehouse speed.",
-    coding: "Deploys fail randomly. Causal mapping shows flaky tests depend on shared mutable seed data across jobs.",
-    output: "Causal map, weak links, likely constraint, controllable intervention."
+    business: "Business: late orders come from approval delay, not packing speed.",
+    coding: "Coding: flaky deploys come from shared test data.",
+    output: "Cause map, bottleneck, next fix."
   },
   {
     rank: "04",
@@ -62,16 +62,16 @@ const skills = [
     file: "04-decision-hygiene-and-option-widening.svg",
     accent: "#ea580c",
     tint: "#ffedd5",
-    useWhen: "The decision has collapsed into one favorite option or a yes/no debate.",
+    useWhen: "The team has only one favorite option.",
     steps: [
-      { label: "Name decision risk", scene: "warning-board", title: "Risk on the table", example: "We only have one serious option." },
-      { label: "Vanish favorite option", scene: "board-x", title: "Favorite removed", example: "If the CRM vanished, what would we try?" },
-      { label: "Add alternatives", scene: "options-board", title: "Three paths", example: "Clean workflow, pilot add-on, staged rollout." },
-      { label: "Set tripwires", scene: "metric-flag", title: "Tripwire metric", example: "If adoption stays under 60 percent, pivot." }
+      { label: "Name risk", scene: "warning-board", title: "One-option trap", example: "Only one idea exists." },
+      { label: "Remove favorite", scene: "board-x", title: "Pretend it vanished", example: "What else works?" },
+      { label: "Add options", scene: "options-board", title: "Three paths", example: "Fix, pilot, stage." },
+      { label: "Set stop rule", scene: "metric-flag", title: "Tripwire", example: "Low use means pivot." }
     ],
-    business: "Instead of buy a CRM or do nothing, compare workflow cleanup, a pilot add-on, and a staged rollout.",
-    coding: "Instead of rewrite as microservices, compare index tuning, queue isolation, endpoint split, and rollback criteria.",
-    output: "Wider option set, assumptions by option, chosen path, pivot rules."
+    business: "Business: compare three smaller choices before buying software.",
+    coding: "Coding: compare tuning, splitting, and rollback before rewriting.",
+    output: "Options, assumptions, chosen path, stop rules."
   },
   {
     rank: "05",
@@ -79,16 +79,16 @@ const skills = [
     file: "05-reality-testing-and-evidence-seeking.svg",
     accent: "#16a34a",
     tint: "#dcfce7",
-    useWhen: "The plan depends on claims that are expensive, risky, or behavior-dependent.",
+    useWhen: "The plan depends on untested beliefs.",
     steps: [
-      { label: "List assumptions", scene: "list-board", title: "Assumption board", example: "New policy will change attendance behavior." },
-      { label: "Zoom out", scene: "chart", title: "Base-rate view", example: "Look at absence trends by month." },
-      { label: "Zoom in", scene: "interview", title: "Manager interview", example: "Ask what actually happens on late days." },
-      { label: "Seek disagreement", scene: "debate", title: "Disconfirming view", example: "What would make this policy fail?" }
+      { label: "List beliefs", scene: "list-board", title: "What must be true", example: "Policy changes behavior." },
+      { label: "Look wide", scene: "chart", title: "Trend view", example: "Check the pattern." },
+      { label: "Look close", scene: "interview", title: "Ask the worker", example: "What happens here?" },
+      { label: "Invite pushback", scene: "debate", title: "Opposite view", example: "How could this fail?" }
     ],
-    business: "Before a new attendance policy, check absence trends, manager interviews, legal constraints, and edge cases.",
-    coding: "Before adding Redis, inspect traces, model cache hit rates, ask SRE what fails, and test failure behavior.",
-    output: "Assumption register, evidence, confidence level, revised recommendation."
+    business: "Business: check real attendance data before changing policy.",
+    coding: "Coding: inspect traces before adding a cache.",
+    output: "Beliefs, evidence, confidence, next recommendation."
   },
   {
     rank: "06",
@@ -96,16 +96,16 @@ const skills = [
     file: "06-structured-ideation-and-brainwriting.svg",
     accent: "#db2777",
     tint: "#fce7f3",
-    useWhen: "The problem is formulated but the team has too few or too-similar ideas.",
+    useWhen: "The team needs more and better ideas.",
     steps: [
-      { label: "Pre-work", scene: "brief", title: "Prompt sent early", example: "Bring three onboarding ideas." },
-      { label: "Silent ideas", scene: "sticky-table", title: "Silent writing", example: "Everyone writes before anyone debates." },
-      { label: "Pass and build", scene: "pass-notes", title: "Build on cards", example: "Add one useful variation to the next card." },
-      { label: "Cluster and test", scene: "cluster-board", title: "Theme clusters", example: "Pick the concepts worth testing." }
+      { label: "Send prompt", scene: "brief", title: "Before meeting", example: "Bring three ideas." },
+      { label: "Write alone", scene: "sticky-table", title: "No debate yet", example: "Everyone writes first." },
+      { label: "Build ideas", scene: "pass-notes", title: "Pass cards", example: "Add one improvement." },
+      { label: "Group themes", scene: "cluster-board", title: "Choose tests", example: "Pick best clusters." }
     ],
-    business: "Onboarding ideas combine into a first-week checklist, buddy system, manager script, and scorecard.",
-    coding: "CI speed ideas combine test sharding, dependency caching, fixture pruning, and flaky-test quarantine.",
-    output: "Raw idea inventory, clusters, top concepts, testing candidates."
+    business: "Business: combine onboarding ideas before choosing one.",
+    coding: "Coding: combine test-speed ideas before changing CI.",
+    output: "Ideas, groups, top concepts, tests."
   },
   {
     rank: "07",
@@ -113,16 +113,16 @@ const skills = [
     file: "07-rapid-prototyping-and-experiments.svg",
     accent: "#ca8a04",
     tint: "#fef9c3",
-    useWhen: "A solution looks promising but important uncertainty remains before full buildout.",
+    useWhen: "A big build can be tested with something small.",
     steps: [
-      { label: "Choose risk", scene: "warning-board", title: "Riskiest assumption", example: "Will huddles expose real blockers?" },
-      { label: "Make low-fi test", scene: "prototype", title: "One-week pilot", example: "Try the huddle with one team." },
-      { label: "Predict result", scene: "chart", title: "Expected signal", example: "Blockers should surface by day three." },
-      { label: "Observe and decide", scene: "review-board", title: "Review result", example: "Revise, stop, retest, or scale." }
+      { label: "Pick risk", scene: "warning-board", title: "Biggest unknown", example: "Will it expose blockers?" },
+      { label: "Try small", scene: "prototype", title: "One-team pilot", example: "Test for one week." },
+      { label: "Predict signal", scene: "chart", title: "Expected result", example: "Blockers appear early." },
+      { label: "Decide next", scene: "review-board", title: "Review result", example: "Stop, revise, scale." }
     ],
-    business: "Run a one-week daily huddle with one team before rolling the operating rhythm across the company.",
-    coding: "Build a feature-flagged stub to validate an API contract before investing in the complete service.",
-    output: "Prototype artifact, expected vs actual result, learning, next decision."
+    business: "Business: pilot a huddle with one team before rollout.",
+    coding: "Coding: test a stub before building the service.",
+    output: "Prototype, result, lesson, next decision."
   },
   {
     rank: "08",
@@ -130,16 +130,16 @@ const skills = [
     file: "08-operating-rhythm-implementation.svg",
     accent: "#0f766e",
     tint: "#ccfbf1",
-    useWhen: "The solution only works if people repeat a new behavior with accountability.",
+    useWhen: "A solution must become a repeated habit.",
     steps: [
-      { label: "Define behavior", scene: "checklist-human", title: "New habit", example: "Name blockers daily." },
-      { label: "Set cadence", scene: "calendar", title: "Weekly rhythm", example: "Monday pipeline review." },
-      { label: "Assign owner", scene: "owner", title: "Clear DRI", example: "One owner per blocker." },
-      { label: "Review metric", scene: "metrics", title: "Visible score", example: "Stage conversion moves." }
+      { label: "Name habit", scene: "checklist-human", title: "New behavior", example: "Say blockers daily." },
+      { label: "Set rhythm", scene: "calendar", title: "Repeat time", example: "Monday review." },
+      { label: "Pick owner", scene: "owner", title: "One person owns it", example: "Owner per blocker." },
+      { label: "Check score", scene: "metrics", title: "Visible progress", example: "Conversion moves." }
     ],
-    business: "Weekly pipeline review names owner, blockers, next actions, and stage-conversion movement.",
-    coding: "Daily deploy health check covers failed jobs, rollback readiness, DRI ownership, and open blockers.",
-    output: "Cadence, roles, visible metric, communication script, review date."
+    business: "Business: review blockers and owners every week.",
+    coding: "Coding: check deploy health every day.",
+    output: "Rhythm, owner, score, review date."
   },
   {
     rank: "09",
@@ -147,16 +147,16 @@ const skills = [
     file: "09-learning-mindset-and-retrospective.svg",
     accent: "#4f46e5",
     tint: "#e0e7ff",
-    useWhen: "A test, launch, failure, or decision produced results that should become reusable learning.",
+    useWhen: "A test, launch, or decision needs a lesson.",
     steps: [
-      { label: "Expected vs actual", scene: "split-board", title: "Compare result", example: "Target and result go side by side." },
-      { label: "Name evidence", scene: "evidence-table", title: "Evidence table", example: "Survey, usage, notes." },
-      { label: "Update assumptions", scene: "edit-board", title: "Updated belief", example: "Managers need scripts before metrics." },
-      { label: "Choose next move", scene: "next-flag", title: "Next action", example: "Revise pilot and retest." }
+      { label: "Compare result", scene: "split-board", title: "Expected vs actual", example: "Target beside result." },
+      { label: "Name proof", scene: "evidence-table", title: "Evidence table", example: "Usage, survey, notes." },
+      { label: "Update belief", scene: "edit-board", title: "New lesson", example: "Scripts before metrics." },
+      { label: "Choose next", scene: "next-flag", title: "Next action", example: "Revise and retest." }
     ],
-    business: "A pilot misses target. The lesson: managers need scripts and practice before accountability metrics.",
-    coding: "An incident review shows alerts were noisy. The lesson: alert on user impact, not raw CPU threshold.",
-    output: "Learning notes, updated assumptions, reusable rule, next experiment or change."
+    business: "Business: a missed pilot target becomes a better script.",
+    coding: "Coding: a noisy alert becomes a clearer signal.",
+    output: "Lesson, updated belief, next move."
   }
 ];
 
