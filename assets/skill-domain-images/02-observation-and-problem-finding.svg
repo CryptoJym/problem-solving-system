@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1060" viewBox="0 0 1280 1060" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1220" viewBox="0 0 1600 1220" role="img" aria-labelledby="title desc">
   <title id="title">02 Observation and Problem Finding</title>
-  <desc id="desc">Illustrated workflow with business and coding examples for Observation and Problem Finding.</desc>
+  <desc id="desc">Humanized illustrated workflow with business and coding examples for Observation and Problem Finding.</desc>
   <style>
     .frame-card .frame-bg { transition: stroke-width 160ms ease, filter 160ms ease; }
     .frame-card:hover .frame-bg { stroke-width: 4; filter: url(#softShadow); }
@@ -14,105 +14,146 @@
       <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.13"/>
     </filter>
   </defs>
-  <rect width="1280" height="1060" fill="#f8fafc"/>
-  <rect x="34" y="34" width="1212" height="992" rx="28" fill="#ffffff" stroke="#d9e2ef" stroke-width="2"/>
-  <rect x="34" y="34" width="1212" height="164" rx="28" fill="#cffafe"/>
-  <circle cx="103" cy="112" r="44" fill="#0891b2"/>
-  <text x="103" y="125" text-anchor="middle" font-size="34" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">02</text>
-  <text x="170" y="94" font-size="39" font-weight="900" fill="#111827" font-family="Inter, ui-sans-serif, system-ui">Observation and Problem Finding</text>
-  <text x="172" y="135" text-anchor="start" font-size="23" font-weight="560" fill="#263244" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="172" dy="0">Use when: There are many possible problems and the team is relying on</tspan><tspan x="172" dy="28.52">secondhand reports.</tspan></text>
+  <rect width="1600" height="1220" fill="#f8fafc"/>
+  <rect x="34" y="34" width="1532" height="1152" rx="30" fill="#ffffff" stroke="#d9e2ef" stroke-width="2"/>
+  <rect x="34" y="34" width="1532" height="170" rx="30" fill="#cffafe"/>
+  <circle cx="105" cy="116" r="46" fill="#0891b2"/>
+  <text x="105" y="130" text-anchor="middle" font-size="35" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">02</text>
+  <text x="176" y="98" font-size="43" font-weight="900" fill="#111827" font-family="Inter, ui-sans-serif, system-ui">Observation and Problem Finding</text>
+  <text x="178" y="142" text-anchor="start" font-size="24" font-weight="610" fill="#263244" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="178" dy="0">Use when: There are many possible problems and the team is relying on secondhand reports.</tspan></text>
 
-  <text x="70" y="248" font-size="25" font-weight="900" fill="#111827" font-family="Inter, ui-sans-serif, system-ui">How it works: illustrated 1 -> 2 -> 3 -> 4 flow</text>
+  <text x="70" y="256" font-size="27" font-weight="900" fill="#111827" font-family="Inter, ui-sans-serif, system-ui">How it works: concrete example flow, 1 -> 2 -> 3 -> 4</text>
 
     <g class="frame-card">
-      <rect class="frame-bg" x="70" y="288" width="252" height="310" rx="20" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.34" stroke-width="2"/>
-      <rect x="88" y="306" width="80" height="28" rx="14" fill="#0891b2" opacity="0.12"/>
-      <text x="128" y="326" text-anchor="middle" font-size="13" font-weight="900" fill="#0891b2" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui">STEP 1</text>
-      <circle cx="112" cy="374" r="25" fill="#0891b2"/>
-      <text x="112" y="383" text-anchor="middle" font-size="23" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">1</text>
-      <text x="146" y="366" text-anchor="start" font-size="23" font-weight="850" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="146" dy="0">Watch real work</tspan></text>
-      <g class="step-art"><rect x="99" y="433" width="194" height="132" rx="20" fill="#cffafe" opacity="0.8"/><g transform="translate(99, 433)">
-      <path d="M 35 66 Q 96 16 157 66 Q 96 116 35 66 Z" fill="#ffffff" stroke="#0891b2" stroke-width="5"/>
-      <circle cx="96" cy="66" r="23" fill="#0891b2" opacity="0.18" stroke="#0891b2" stroke-width="4"/>
-      <circle cx="96" cy="66" r="8" fill="#0891b2"/>
-      <rect x="44" y="100" width="104" height="15" rx="8" fill="#0891b2" opacity="0.16"/>
-    </g></g>
+      <rect class="frame-bg" x="70" y="300" width="340" height="430" rx="22" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.36" stroke-width="2"/>
+      <rect x="92" y="322" width="78" height="30" rx="15" fill="#0891b2" opacity="0.12"/>
+      <text x="131" y="343" text-anchor="middle" font-size="13" font-weight="900" fill="#0891b2" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui">STEP 1</text>
+      <circle cx="119" cy="396" r="27" fill="#0891b2"/>
+      <text x="119" y="406" text-anchor="middle" font-size="25" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">1</text>
+      <text x="162" y="388" text-anchor="start" font-size="25" font-weight="880" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="162" dy="0">Watch real work</tspan></text>
+      <g class="step-art"><rect x="100" y="450" width="280" height="184" rx="22" fill="#cffafe" opacity="0.72"/><g transform="translate(100, 450)">
+      <rect x="68" y="111" width="154" height="24" rx="12" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.35" stroke-width="3"/>
+
+    <circle cx="64" cy="92" r="10.8" fill="#0891b2" opacity="0.92"/>
+    <path d="M 43.3 132.5 Q 64 111.8 84.7 132.5" fill="#0891b2" opacity="0.18" stroke="#0891b2" stroke-width="2.7"/>
+
+      <rect x="112" y="58" width="78" height="48" rx="8" fill="#ffffff" stroke="#0891b2" stroke-width="4"/>
+      <path d="M 127 78 H 174 M 127 93 H 160" stroke="#0891b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.32"/>
+      <path d="M 204 65 H 238 M 204 83 H 238" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.5"/>
+    </g><path d="M 126 608 H 354" stroke="#0891b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.14"/></g>
+      <text x="100" y="665" text-anchor="start" font-size="17" font-weight="900" fill="#0891b2" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="100" dy="0">Watch the billing call</tspan></text>
+      <text x="100" y="692" text-anchor="start" font-size="17" font-weight="650" fill="#243047" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="100" dy="0">Agent enters the same</tspan><tspan x="100" dy="19.040000000000003">customer data twice.</tspan></text>
     </g>
 
     <g class="frame-card">
-      <rect class="frame-bg" x="370" y="288" width="252" height="310" rx="20" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.34" stroke-width="2"/>
-      <rect x="388" y="306" width="80" height="28" rx="14" fill="#0891b2" opacity="0.12"/>
-      <text x="428" y="326" text-anchor="middle" font-size="13" font-weight="900" fill="#0891b2" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui">STEP 2</text>
-      <circle cx="412" cy="374" r="25" fill="#0891b2"/>
-      <text x="412" y="383" text-anchor="middle" font-size="23" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">2</text>
-      <text x="446" y="366" text-anchor="start" font-size="23" font-weight="850" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="446" dy="0">Record surprises</tspan></text>
-      <g class="step-art"><rect x="399" y="433" width="194" height="132" rx="20" fill="#cffafe" opacity="0.8"/><g transform="translate(399, 433)">
-      <rect x="48" y="31" width="98" height="78" rx="10" fill="#ffffff" stroke="#0891b2" stroke-width="4"/>
-      <path d="M 65 55 H 122" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.34"/>
-      <path d="M 65 75 H 112" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.34"/>
-      <path d="M 144 26 L 158 16 M 151 48 L 169 48 M 140 70 L 154 83" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <text x="93" y="95" text-anchor="middle" font-size="58" font-weight="900" fill="#0891b2" font-family="Inter, ui-sans-serif, system-ui">!</text>
-    </g></g>
+      <rect class="frame-bg" x="445" y="300" width="340" height="430" rx="22" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.36" stroke-width="2"/>
+      <rect x="467" y="322" width="78" height="30" rx="15" fill="#0891b2" opacity="0.12"/>
+      <text x="506" y="343" text-anchor="middle" font-size="13" font-weight="900" fill="#0891b2" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui">STEP 2</text>
+      <circle cx="494" cy="396" r="27" fill="#0891b2"/>
+      <text x="494" y="406" text-anchor="middle" font-size="25" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">2</text>
+      <text x="537" y="388" text-anchor="start" font-size="25" font-weight="880" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="537" dy="0">Record surprises</tspan></text>
+      <g class="step-art"><rect x="475" y="450" width="280" height="184" rx="22" fill="#cffafe" opacity="0.72"/><g transform="translate(475, 450)">
+
+    <circle cx="48" cy="114" r="10.2" fill="#0891b2" opacity="0.92"/>
+    <path d="M 28.45 152.25 Q 48 132.7 67.55 152.25" fill="#0891b2" opacity="0.18" stroke="#0891b2" stroke-width="2.55"/>
+
+      <rect x="88" y="36" width="120" height="105" rx="12" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.45" stroke-width="4"/>
+
+    <rect x="105" y="55" width="72" height="30" rx="9" fill="#0891b2" opacity="0.16" stroke="#0891b2" stroke-opacity="0.35" stroke-width="2"/>
+    <text x="115" y="79" text-anchor="start" font-size="13" font-weight="800" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="115" dy="0">Surprise</tspan></text>
+
+      <path d="M 105 102 H 187 M 105 119 H 166" stroke="#0891b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.28"/>
+      <text x="221" y="78" text-anchor="middle" font-size="46" font-weight="900" fill="#0891b2" font-family="Inter, ui-sans-serif">!</text>
+    </g><path d="M 501 608 H 729" stroke="#0891b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.14"/></g>
+      <text x="475" y="665" text-anchor="start" font-size="17" font-weight="900" fill="#0891b2" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="475" dy="0">Surprise note</tspan></text>
+      <text x="475" y="692" text-anchor="start" font-size="17" font-weight="650" fill="#243047" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="475" dy="0">Duplicate entry creates</tspan><tspan x="475" dy="19.040000000000003">avoidable mistakes.</tspan></text>
     </g>
 
     <g class="frame-card">
-      <rect class="frame-bg" x="670" y="288" width="252" height="310" rx="20" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.34" stroke-width="2"/>
-      <rect x="688" y="306" width="80" height="28" rx="14" fill="#0891b2" opacity="0.12"/>
-      <text x="728" y="326" text-anchor="middle" font-size="13" font-weight="900" fill="#0891b2" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui">STEP 3</text>
-      <circle cx="712" cy="374" r="25" fill="#0891b2"/>
-      <text x="712" y="383" text-anchor="middle" font-size="23" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">3</text>
-      <text x="746" y="366" text-anchor="start" font-size="23" font-weight="850" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="746" dy="0">Separate symptoms</tspan></text>
-      <g class="step-art"><rect x="699" y="433" width="194" height="132" rx="20" fill="#cffafe" opacity="0.8"/><g transform="translate(699, 433)">
-      <path d="M 40 30 H 154 L 112 74 V 106 L 82 118 V 74 Z" fill="#ffffff" stroke="#0891b2" stroke-width="4" stroke-linejoin="round"/>
-      <circle cx="55" cy="42" r="6" fill="#0891b2" opacity="0.7"/>
-      <circle cx="86" cy="42" r="6" fill="#0891b2" opacity="0.7"/>
-      <circle cx="117" cy="42" r="6" fill="#0891b2" opacity="0.7"/>
-      <path d="M 58 112 H 36 M 136 112 H 158" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.52"/>
-    </g></g>
+      <rect class="frame-bg" x="820" y="300" width="340" height="430" rx="22" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.36" stroke-width="2"/>
+      <rect x="842" y="322" width="78" height="30" rx="15" fill="#0891b2" opacity="0.12"/>
+      <text x="881" y="343" text-anchor="middle" font-size="13" font-weight="900" fill="#0891b2" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui">STEP 3</text>
+      <circle cx="869" cy="396" r="27" fill="#0891b2"/>
+      <text x="869" y="406" text-anchor="middle" font-size="25" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">3</text>
+      <text x="912" y="388" text-anchor="start" font-size="25" font-weight="880" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="912" dy="0">Separate symptoms</tspan></text>
+      <g class="step-art"><rect x="850" y="450" width="280" height="184" rx="22" fill="#cffafe" opacity="0.72"/><g transform="translate(850, 450)">
+
+    <rect x="35" y="34" width="210" height="104" rx="14" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.48" stroke-width="4"/>
+
+
+      <path d="M 105 51 V 126 M 175 51 V 126" stroke="#0891b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.22"/>
+
+    <rect x="49" y="72" width="43" height="28" rx="9" fill="#0891b2" opacity="0.16" stroke="#0891b2" stroke-opacity="0.35" stroke-width="2"/>
+    <text x="59" y="96" text-anchor="start" font-size="13" font-weight="800" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="59" dy="0">S</tspan></text>
+
+
+    <rect x="119" y="72" width="43" height="28" rx="9" fill="#0891b2" opacity="0.12" stroke="#0891b2" stroke-opacity="0.35" stroke-width="2"/>
+    <text x="129" y="96" text-anchor="start" font-size="13" font-weight="800" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="129" dy="0">C</tspan></text>
+
+
+    <rect x="189" y="72" width="43" height="28" rx="9" fill="#0891b2" opacity="0.16" stroke="#0891b2" stroke-opacity="0.35" stroke-width="2"/>
+    <text x="199" y="96" text-anchor="start" font-size="13" font-weight="800" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="199" dy="0">Fix</tspan></text>
+
+
+    <circle cx="38" cy="141" r="8.64" fill="#0891b2" opacity="0.92"/>
+    <path d="M 21.44 173.4 Q 38 156.84 54.56 173.4" fill="#0891b2" opacity="0.18" stroke="#0891b2" stroke-width="2.16"/>
+
+    </g><path d="M 876 608 H 1104" stroke="#0891b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.14"/></g>
+      <text x="850" y="665" text-anchor="start" font-size="17" font-weight="900" fill="#0891b2" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="850" dy="0">Sort the notes</tspan></text>
+      <text x="850" y="692" text-anchor="start" font-size="17" font-weight="650" fill="#243047" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="850" dy="0">Complaint, symptom, cause,</tspan><tspan x="850" dy="19.040000000000003">and fix go in separate</tspan><tspan x="850" dy="19.040000000000003">columns.</tspan></text>
     </g>
 
     <g class="frame-card">
-      <rect class="frame-bg" x="970" y="288" width="252" height="310" rx="20" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.34" stroke-width="2"/>
-      <rect x="988" y="306" width="80" height="28" rx="14" fill="#0891b2" opacity="0.12"/>
-      <text x="1028" y="326" text-anchor="middle" font-size="13" font-weight="900" fill="#0891b2" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui">STEP 4</text>
-      <circle cx="1012" cy="374" r="25" fill="#0891b2"/>
-      <text x="1012" y="383" text-anchor="middle" font-size="23" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">4</text>
-      <text x="1046" y="366" text-anchor="start" font-size="23" font-weight="850" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="1046" dy="0">Pick high-value</tspan><tspan x="1046" dy="24.150000000000002">problem</tspan></text>
-      <g class="step-art"><rect x="999" y="433" width="194" height="132" rx="20" fill="#cffafe" opacity="0.8"/><g transform="translate(999, 433)">
-      <rect x="36" y="30" width="116" height="86" rx="12" fill="#ffffff" stroke="#0891b2" stroke-width="4"/>
-      <path d="M 94 30 V 116 M 36 73 H 152" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.24"/>
-      <path d="M 117 51 L 126 68 L 145 71 L 131 84 L 135 103 L 117 94 L 100 103 L 104 84 L 90 71 L 109 68 Z" fill="#0891b2"/>
-    </g></g>
+      <rect class="frame-bg" x="1195" y="300" width="340" height="430" rx="22" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.36" stroke-width="2"/>
+      <rect x="1217" y="322" width="78" height="30" rx="15" fill="#0891b2" opacity="0.12"/>
+      <text x="1256" y="343" text-anchor="middle" font-size="13" font-weight="900" fill="#0891b2" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui">STEP 4</text>
+      <circle cx="1244" cy="396" r="27" fill="#0891b2"/>
+      <text x="1244" y="406" text-anchor="middle" font-size="25" font-weight="900" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">4</text>
+      <text x="1287" y="388" text-anchor="start" font-size="25" font-weight="880" fill="#172033" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="1287" dy="0">Pick high-value</tspan><tspan x="1287" dy="26.25">problem</tspan></text>
+      <g class="step-art"><rect x="1225" y="450" width="280" height="184" rx="22" fill="#cffafe" opacity="0.72"/><g transform="translate(1225, 450)">
+
+    <rect x="51" y="35" width="170" height="105" rx="14" fill="#ffffff" stroke="#0891b2" stroke-opacity="0.48" stroke-width="4"/>
+
+
+      <path d="M 136 49 V 126 M 64 88 H 208" stroke="#0891b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.22"/>
+      <path d="M 178 64 L 186 80 L 204 83 L 191 95 L 194 113 L 178 105 L 162 113 L 165 95 L 152 83 L 170 80 Z" fill="#0891b2"/>
+
+    <circle cx="50" cy="143" r="8.64" fill="#0891b2" opacity="0.92"/>
+    <path d="M 33.44 175.4 Q 50 158.84 66.56 175.4" fill="#0891b2" opacity="0.18" stroke="#0891b2" stroke-width="2.16"/>
+
+    </g><path d="M 1251 608 H 1479" stroke="#0891b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.14"/></g>
+      <text x="1225" y="665" text-anchor="start" font-size="17" font-weight="900" fill="#0891b2" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="1225" dy="0">Priority choice</tspan></text>
+      <text x="1225" y="692" text-anchor="start" font-size="17" font-weight="650" fill="#243047" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="1225" dy="0">Fix duplicate billing entry</tspan><tspan x="1225" dy="19.040000000000003">first.</tspan></text>
     </g>
 
 
-    <path d="M 336 438 H 354" stroke="#0891b2" stroke-width="4" stroke-linecap="round" opacity="0.52"/>
-    <path d="M 343 430 L 355 438 L 343 446" fill="none" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.52"/>
+    <path d="M 421 516 H 427" stroke="#0891b2" stroke-width="4" stroke-linecap="round" opacity="0.56"/>
+    <path d="M 416 508 L 428 516 L 416 524" fill="none" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.56"/>
 
 
-    <path d="M 636 438 H 654" stroke="#0891b2" stroke-width="4" stroke-linecap="round" opacity="0.52"/>
-    <path d="M 643 430 L 655 438 L 643 446" fill="none" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.52"/>
+    <path d="M 796 516 H 802" stroke="#0891b2" stroke-width="4" stroke-linecap="round" opacity="0.56"/>
+    <path d="M 791 508 L 803 516 L 791 524" fill="none" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.56"/>
 
 
-    <path d="M 936 438 H 954" stroke="#0891b2" stroke-width="4" stroke-linecap="round" opacity="0.52"/>
-    <path d="M 943 430 L 955 438 L 943 446" fill="none" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.52"/>
+    <path d="M 1171 516 H 1177" stroke="#0891b2" stroke-width="4" stroke-linecap="round" opacity="0.56"/>
+    <path d="M 1166 508 L 1178 516 L 1166 524" fill="none" stroke="#0891b2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.56"/>
 
 
 
-    <rect x="70" y="660" width="545" height="176" rx="18" fill="#ffffff" stroke="#d9e2ef" stroke-width="2"/>
-    <rect x="70" y="660" width="545" height="46" rx="18" fill="#0891b2" opacity="0.94"/>
-    <text x="94" y="691" font-size="20" font-weight="800" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">Business example</text>
-    <text x="570" y="691" text-anchor="end" font-size="15" font-weight="800" fill="#ffffff" opacity="0.88" font-family="Inter, ui-sans-serif, system-ui">scenario</text>
-    <text x="94" y="742" text-anchor="start" font-size="22" font-weight="560" fill="#243047" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="94" dy="0">Support tickets blame training. Call shadowing</tspan><tspan x="94" dy="27.72">shows the billing screen forces duplicate entry</tspan><tspan x="94" dy="27.72">and creates mistakes.</tspan></text>
+    <rect x="70" y="800" width="690" height="172" rx="18" fill="#ffffff" stroke="#d9e2ef" stroke-width="2"/>
+    <rect x="70" y="800" width="690" height="46" rx="18" fill="#0891b2" opacity="0.94"/>
+    <text x="94" y="831" font-size="20" font-weight="850" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">Business example</text>
+    <text x="712" y="831" text-anchor="end" font-size="15" font-weight="850" fill="#ffffff" opacity="0.88" font-family="Inter, ui-sans-serif, system-ui">scenario</text>
+    <text x="94" y="884" text-anchor="start" font-size="21" font-weight="620" fill="#243047" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="94" dy="0">Support tickets blame training. Call shadowing shows the</tspan><tspan x="94" dy="26.25">billing screen forces duplicate entry and creates</tspan><tspan x="94" dy="26.25">mistakes.</tspan></text>
 
 
-    <rect x="665" y="660" width="545" height="176" rx="18" fill="#ffffff" stroke="#d9e2ef" stroke-width="2"/>
-    <rect x="665" y="660" width="545" height="46" rx="18" fill="#0891b2" opacity="0.94"/>
-    <text x="689" y="691" font-size="20" font-weight="800" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">Coding example</text>
-    <text x="1165" y="691" text-anchor="end" font-size="15" font-weight="800" fill="#ffffff" opacity="0.88" font-family="Inter, ui-sans-serif, system-ui">scenario</text>
-    <text x="689" y="742" text-anchor="start" font-size="22" font-weight="560" fill="#243047" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="689" dy="0">Users report login bugs. Session replay shows</tspan><tspan x="689" dy="27.72">the real issue is an OAuth redirect loop after</tspan><tspan x="689" dy="27.72">expired sessions.</tspan></text>
+    <rect x="840" y="800" width="690" height="172" rx="18" fill="#ffffff" stroke="#d9e2ef" stroke-width="2"/>
+    <rect x="840" y="800" width="690" height="46" rx="18" fill="#0891b2" opacity="0.94"/>
+    <text x="864" y="831" font-size="20" font-weight="850" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui">Coding example</text>
+    <text x="1482" y="831" text-anchor="end" font-size="15" font-weight="850" fill="#ffffff" opacity="0.88" font-family="Inter, ui-sans-serif, system-ui">scenario</text>
+    <text x="864" y="884" text-anchor="start" font-size="21" font-weight="620" fill="#243047" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="864" dy="0">Users report login bugs. Session replay shows the real</tspan><tspan x="864" dy="26.25">issue is an OAuth redirect loop after expired sessions.</tspan></text>
 
-  <rect x="70" y="892" width="1140" height="54" rx="14" fill="#f8fafc" stroke="#e5edf6"/>
-  <text x="94" y="926" font-size="19" font-weight="900" fill="#0891b2" font-family="Inter, ui-sans-serif, system-ui">Output</text>
-  <text x="174" y="926" text-anchor="start" font-size="19" font-weight="650" fill="#263244" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="174" dy="0">Candidate problems, observed symptoms, selection rationale, open questions.</tspan></text>
+  <rect x="70" y="1036" width="1460" height="58" rx="15" fill="#f8fafc" stroke="#e5edf6"/>
+  <text x="96" y="1073" font-size="20" font-weight="900" fill="#0891b2" font-family="Inter, ui-sans-serif, system-ui">Output</text>
+  <text x="184" y="1073" text-anchor="start" font-size="20" font-weight="700" fill="#263244" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"><tspan x="184" dy="0">Candidate problems, observed symptoms, selection rationale, open questions.</tspan></text>
 </svg>

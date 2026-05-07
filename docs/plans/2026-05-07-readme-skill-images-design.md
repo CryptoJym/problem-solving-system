@@ -10,7 +10,7 @@ Use one repo-native SVG image per skill domain. Each image includes:
 
 - the skill name and rank
 - a short "use when" trigger
-- a four-step workflow shown as larger framed cards
+- a four-step workflow shown as larger framed scenario cards
 - one business scenario
 - one coding scenario
 - the expected output artifact
@@ -19,7 +19,9 @@ This approach keeps the README durable on GitHub without relying on external ima
 
 ## Visual Layout
 
-The workflow section uses a left-to-right `1 -> 2 -> 3 -> 4` sequence so the arrows match the conceptual order. Each step is a large framed card with the step label at the top and a small embedded instructional illustration underneath it. This keeps long labels inside their cards, makes the sequence readable on GitHub's scaled README view, and teaches the action visually instead of relying only on text.
+The workflow section uses a left-to-right `1 -> 2 -> 3 -> 4` sequence so the arrows match the conceptual order. Each step is a large framed card with the step label at the top, a concrete mini-scene in the middle, and a plain-language example caption at the bottom. The scenes use people, meetings, whiteboards, dashboards, sticky notes, process maps, review boards, and visible artifacts rather than abstract symbols.
+
+For example, the first skill now uses a sales pipeline story: a VP says "We need more reps," the hidden "hire reps" solution is crossed out, the team reframes around a marketing-to-sales handoff, and the final card asks where the CRM data shows leads stalling. This makes the card understandable even before someone reads the detailed playbook.
 
 Each frame card also includes lightweight hover emphasis for SVG viewers that support it, while the static layout remains complete when hover or motion is unavailable.
 
@@ -28,7 +30,7 @@ Each frame card also includes lightweight hover emphasis for SVG viewers that su
 - Nine image assets exist under `assets/skill-domain-images/`.
 - The top-level `README.md` embeds all nine images.
 - Each image includes a business example and a coding example.
-- Each workflow frame includes its own embedded illustration.
+- Each workflow frame includes its own concrete mini-scene and example caption.
 - The images illustrate how the skill works, not just decorate the page.
 - Flow arrows read left-to-right as `1 -> 2 -> 3 -> 4`.
 - Generated assets and README changes pass syntax and redaction checks.
