@@ -19,12 +19,16 @@ This approach keeps the README durable on GitHub without relying on external ima
 
 ## Visual Layout
 
-The workflow section uses a two-by-two frame layout instead of a single compressed row. This keeps long labels inside their cards and makes the sequence readable on GitHub's scaled README view. Each frame card also includes lightweight hover emphasis for SVG viewers that support it, while the static layout remains complete when hover or motion is unavailable.
+The workflow section uses a left-to-right `1 -> 2 -> 3 -> 4` sequence so the arrows match the conceptual order. Each step is a large framed card with the step label at the top and a small embedded instructional illustration underneath it. This keeps long labels inside their cards, makes the sequence readable on GitHub's scaled README view, and teaches the action visually instead of relying only on text.
+
+Each frame card also includes lightweight hover emphasis for SVG viewers that support it, while the static layout remains complete when hover or motion is unavailable.
 
 ## Acceptance Criteria
 
 - Nine image assets exist under `assets/skill-domain-images/`.
 - The top-level `README.md` embeds all nine images.
 - Each image includes a business example and a coding example.
+- Each workflow frame includes its own embedded illustration.
 - The images illustrate how the skill works, not just decorate the page.
+- Flow arrows read left-to-right as `1 -> 2 -> 3 -> 4`.
 - Generated assets and README changes pass syntax and redaction checks.
