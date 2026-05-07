@@ -68,6 +68,22 @@ Each image shows how the skill works and gives one business scenario plus one co
 
 ![Learning Mindset and Retrospective workflow with business and coding examples](assets/skill-domain-images/09-learning-mindset-and-retrospective.svg)
 
+## Motion Walkthroughs
+
+Each hyper-frame video uses the same four-panel story as the image and highlights the frames in the correct order: `1 -> 2 -> 3 -> 4`.
+
+| Rank | Skill | Hyper-Frame Video |
+| --- | --- | --- |
+| 1 | Problem Framing and Reframing | [Watch MP4](assets/skill-domain-videos/01-problem-framing-and-reframing.mp4) |
+| 2 | Observation and Problem Finding | [Watch MP4](assets/skill-domain-videos/02-observation-and-problem-finding.mp4) |
+| 3 | Root Cause and Constraint Mapping | [Watch MP4](assets/skill-domain-videos/03-root-cause-and-constraint-mapping.mp4) |
+| 4 | Decision Hygiene and Option Widening | [Watch MP4](assets/skill-domain-videos/04-decision-hygiene-and-option-widening.mp4) |
+| 5 | Reality Testing and Evidence Seeking | [Watch MP4](assets/skill-domain-videos/05-reality-testing-and-evidence-seeking.mp4) |
+| 6 | Structured Ideation and Brainwriting | [Watch MP4](assets/skill-domain-videos/06-structured-ideation-and-brainwriting.mp4) |
+| 7 | Rapid Prototyping and Experiments | [Watch MP4](assets/skill-domain-videos/07-rapid-prototyping-and-experiments.mp4) |
+| 8 | Operating Rhythm Implementation | [Watch MP4](assets/skill-domain-videos/08-operating-rhythm-implementation.mp4) |
+| 9 | Learning Mindset and Retrospective | [Watch MP4](assets/skill-domain-videos/09-learning-mindset-and-retrospective.mp4) |
+
 ## Operating Loop
 
 Use the skills as a loop:
@@ -124,5 +140,7 @@ For an individual problem, use one skill at a time. For a team workshop, assign 
 - [Detailed ordered rationale](docs/ordered-skill-system.md)
 - [Source review notes](docs/source-review-notes.md)
 - [Reusable skill playbooks](skills/README.md)
+- [Generated skill videos](assets/skill-domain-videos/README.md)
 - [Public skill pack design](docs/plans/2026-05-07-public-skill-pack-design.md)
 - [README skill images design](docs/plans/2026-05-07-readme-skill-images-design.md)
+- [Hyper-frame video design](docs/plans/2026-05-07-hyper-frame-videos-design.md)
