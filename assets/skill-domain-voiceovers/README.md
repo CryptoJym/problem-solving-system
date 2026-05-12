@@ -39,10 +39,10 @@ Once the problem is clear, do not let the loudest person choose the first idea. 
 
 When the debate becomes abstract, make it testable. Pick the assumption most likely to break the plan. Build the smallest artifact that can teach you something: a pilot, a mockup, a stub, or a manual version of the workflow. Write the expected signal before the test. Then let the result change the plan.
 
-## 08. Operating Rhythm Implementation
+## 08. Operating Rhythm and Sustainment
 
 A solution is not implemented just because someone announced it. It becomes real when people know the habit, the owner, the cadence, the visible score, and the review date. Decide what will happen every day, week, or cycle. Then make the progress visible enough that the system cannot quietly drift back.
 
-## 09. Learning Mindset and Retrospective
+## 09. Learning Mindset and After-Action Review
 
 After action, capture the lesson while the evidence is still fresh. Compare what you expected with what actually happened. Separate facts from the story you want to tell. Name what the result proved, disproved, or left unknown. Then update the rule so the next decision starts smarter than this one did.

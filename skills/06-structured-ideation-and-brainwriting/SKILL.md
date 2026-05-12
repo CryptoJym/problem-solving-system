@@ -12,6 +12,7 @@ description: Use when the team needs many solution options without letting first
 - Brainstorming is producing shallow or repetitive ideas.
 - Some participants dominate the room.
 - The problem needs diverse perspectives.
+- The group is converging before enough materially different options exist.
 
 ## Inputs
 
@@ -28,8 +29,9 @@ Use a 45-minute brainwriting session:
 1. Give the problem frame and constraints before the session.
 2. Have participants write silently first.
 3. Pass ideas through the group for additions and combinations.
-4. Cluster after expansion, not before.
-5. Select the top concepts and turn them into testable hypotheses.
+4. Run one analogy round before voting.
+5. Cluster after expansion, not before.
+6. Select the top concepts and turn them into testable hypotheses.
 
 ## Procedure
 
@@ -38,11 +40,19 @@ Use a 45-minute brainwriting session:
 3. Have each person write one idea per page or card.
 4. Add all ideas to a shared stack without ownership discussion.
 5. Randomly draw ideas and add variations, concerns, and combinations.
-6. Continue until additions dry up.
-7. Cluster similar ideas.
-8. Vote for the top 3-5 options.
-9. Discuss only after ideas have been expanded.
-10. Convert finalists into testable solution concepts.
+6. Run a combination and analogy round:
+   - combine two weak ideas into one stronger concept
+   - ask what another industry, team, or product would try
+   - borrow a pattern from a solved adjacent problem
+7. Continue until additions dry up.
+8. Cluster similar ideas.
+9. Vote for the top 3-5 options.
+10. Discuss only after ideas have been expanded.
+11. Convert finalists into testable solution concepts.
+
+## Teaching-Order Note
+
+When starting from a clear problem and no chosen solution, run this skill before Skill 4. Generate the option set first, then use decision hygiene to narrow it.
 
 ## Template
 
@@ -61,6 +71,8 @@ Clusters:
 
 Combined concepts:
 
+Analogy prompts used:
+
 Top candidates:
 
 Why selected:
@@ -74,6 +86,7 @@ Assumption each candidate tests:
 - Clustered themes
 - Top options
 - Combined or improved concepts
+- Analogy-derived options
 - Testing candidates
 
 ## Evidence Check
@@ -82,6 +95,7 @@ Before leaving this skill, confirm:
 
 - Ideas were generated before group debate.
 - Dominant voices did not control the raw inventory.
+- A combination or analogy round happened before voting.
 - The final options are more diverse than the starting option set.
 - Each finalist can be tested with a small prototype or evidence pass.
 

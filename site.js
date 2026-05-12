@@ -78,25 +78,25 @@ const lessons = [
   },
   {
     rank: "08",
-    title: "Operating Rhythm Implementation",
+    title: "Operating Rhythm and Sustainment",
     slug: "operating-rhythm-implementation",
     accent: "#0f766e",
-    useWhen: "A solution must become repeated habit.",
-    promise: "Turn a solution into ownership, cadence, visibility, and review.",
+    useWhen: "An adopted solution must become repeated habit.",
+    promise: "Turn an adopted solution into ownership, cadence, visibility, standard work, and review.",
     business: "Review blockers and owners every week.",
     coding: "Check deploy health every day.",
-    transcript: "A solution is not implemented just because someone announced it. It becomes real when people know the habit, the owner, the cadence, the visible score, and the review date. Decide what will happen every day, week, or cycle. Then make the progress visible enough that the system cannot quietly drift back."
+    transcript: "A solution is not sustained just because someone announced it. It becomes real when people know the habit, the owner, the cadence, the visible score, and the review date. Decide what will happen every day, week, or cycle. Then make the progress visible enough that the system cannot quietly drift back."
   },
   {
     rank: "09",
-    title: "Learning Mindset and Retrospective",
+    title: "Learning Mindset and After-Action Review",
     slug: "learning-mindset-and-retrospective",
     accent: "#4f46e5",
     useWhen: "After action, one decision needs a lesson.",
-    promise: "Convert results and surprises into better future behavior.",
+    promise: "Convert results and surprises into better future behavior and a system update.",
     business: "A missed pilot target becomes a better script.",
     coding: "A noisy alert becomes a clearer signal.",
-    transcript: "After action, capture the lesson while the evidence is still fresh. Compare what you expected with what actually happened. Separate facts from the story you want to tell. Name what the result proved, disproved, or left unknown. Then update the rule so the next decision starts smarter than this one did."
+    transcript: "After action, capture the lesson while the evidence is still fresh. Compare what you expected with what actually happened. Separate facts from the story you want to tell. Name what helped, what hurt, and what the result proved or disproved. Then update the rule so the next decision starts smarter than this one did."
   }
 ];
 

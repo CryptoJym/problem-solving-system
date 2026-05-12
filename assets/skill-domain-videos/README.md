@@ -28,5 +28,5 @@ https://cryptojym.github.io/problem-solving-system/
 - [05. Reality Testing and Evidence Seeking](05-reality-testing-and-evidence-seeking.mp4)
 - [06. Structured Ideation and Brainwriting](06-structured-ideation-and-brainwriting.mp4)
 - [07. Rapid Prototyping and Experiments](07-rapid-prototyping-and-experiments.mp4)
-- [08. Operating Rhythm Implementation](08-operating-rhythm-implementation.mp4)
-- [09. Learning Mindset and Retrospective](09-learning-mindset-and-retrospective.mp4)
+- [08. Operating Rhythm and Sustainment](08-operating-rhythm-implementation.mp4)
+- [09. Learning Mindset and After-Action Review](09-learning-mindset-and-retrospective.mp4)
