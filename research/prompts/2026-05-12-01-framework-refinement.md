@@ -3,7 +3,8 @@
 Date/time prepared: 2026-05-12 11:57 MDT  
 Model label observed in UI: `Latest • 5.5`  
 Mode label selected in UI: `Extended Pro`  
-Deep Research status: tool visible; launch not confirmed because Chrome tab focus became unreliable  
+Deep Research status: launched at 2026-05-12 12:18 MDT; result supplied by user in Codex thread and preserved at `research/results/2026-05-12-01-framework-refinement-result.md`
+Conversation URL: https://chatgpt.com/c/6a036eda-2ad0-83e8-97fc-ce6952af112f
 Attachments: none. Use public repo URL and inline context below.  
 
 ## Prompt

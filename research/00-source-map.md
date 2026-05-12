@@ -38,11 +38,10 @@ Refine the nine-skill Problem Solving System and identify the smallest set of ad
 | Decision hygiene | Improves PS-04 and PS-05 through WRAP, tripwires, premortems, and disconfirmation. | Heath Brothers Decisive resources; Gary Klein premortem |
 | Ideation and facilitation | Improves PS-06 with more inclusive, lower-friction idea generation. | Brainwriting research; Liberating Structures |
 | Prototyping and experimentation | Improves PS-07 with explicit learning thresholds and MVP discipline. | Lean Startup / validated learning |
-| Implementation and behavior change | Improves PS-08 by adding behavior-change diagnosis before cadence design. | COM-B / behavior change wheel; implementation science |
+| Implementation and behavior change | Identifies the highest-value new skill: stakeholder alignment and adoption design before operating rhythm. | Proctor implementation outcomes; CFIR; effective implementation sources; psychological safety |
 | Learning systems | Improves PS-09 with psychological safety and after-action-review discipline. | Edmondson psychological safety; AAR sources |
-| Measurement and prioritization | Identifies missing measurement, leading indicator, and Pareto prioritization skill. | ASQ Pareto chart; PMI measurement sources; Goodhart risk sources |
-| Problem-type diagnosis | Identifies missing context/sensemaking skill before selecting a method. | Cynefin framework |
-| Stakeholder alignment | Identifies missing stakeholder/power/interest mapping skill. | PMI stakeholder analysis |
+| Measurement and prioritization | Refines PS-01, PS-05, PS-07, and PS-08 with aims, baselines, guardrails, evidence registers, experiment thresholds, and sustainment signals. | Model for Improvement; CEBMa; PDSA; Goodhart risk sources |
+| Stakeholder alignment | Identifies the missing adoption-control layer between experiments and operating rhythm. | Implementation science; CFIR; psychological safety |
 
 ## ChatGPT Deep Research Status
 
@@ -52,4 +51,6 @@ The ChatGPT web UI was opened and verified as logged in. The UI displayed:
 - Selected mode label after configuration: `Extended Pro`
 - Tool menu option: `Deep research`
 
-Direct run launch is tracked in `research/TRACKER.md`. Browser control verified the relevant UI labels, but launch was not confirmed because Chrome focus jumped to unrelated active tabs after selecting the Deep Research tool. The fallback path is therefore in effect: the prompt is preserved for manual launch, and local synthesis is built only from local artifacts and browsed sources.
+Direct run launch is tracked in `research/TRACKER.md`. The first browser attempt was blocked by unreliable Chrome focus, but the run was relaunched successfully in a clean Chrome window at `2026-05-12 12:18 MDT`. The final Deep Research content was supplied by the user in the Codex thread and preserved at `research/results/2026-05-12-01-framework-refinement-result.md`.
+
+An OpenAI API Deep Research fallback was also attempted with `o4-mini-deep-research`, `web_search_preview`, background mode, and a bounded `max_tool_calls=60`. The API request failed with `insufficient_quota`, so it produced no result text.
